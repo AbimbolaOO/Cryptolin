@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="68" id="KGk-i7-Jjw" customClass="SettingsTableViewCell" customModule="cryptolin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="321" height="68"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="321" height="68"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MYS-NB-lgB">
+                        <rect key="frame" x="4" y="4" width="313" height="60"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="die.face.2.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dzg-ij-Ll6">
+                                <rect key="frame" x="0.0" y="9" width="44" height="41.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ZB4-ZX-0A7"/>
+                                    <constraint firstAttribute="width" constant="44" id="sxQ-Xs-V8M"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Vi3-MN-iyB">
+                                <rect key="frame" x="54" y="4" width="259" height="52.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wqz-4c-QOT">
+                                        <rect key="frame" x="0.0" y="0.0" width="259" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manage your profile details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZQ-HC-doY">
+                                        <rect key="frame" x="0.0" y="33" width="259" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="MYS-NB-lgB" secondAttribute="bottom" constant="4" id="Saz-V2-uds"/>
+                    <constraint firstAttribute="trailing" secondItem="MYS-NB-lgB" secondAttribute="trailing" constant="4" id="ZqW-qa-5H3"/>
+                    <constraint firstItem="MYS-NB-lgB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="dbX-xb-yXs"/>
+                    <constraint firstItem="MYS-NB-lgB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="m1O-B1-hUO"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="iconImage" destination="dzg-ij-Ll6" id="ri0-mf-hKK"/>
+                <outlet property="settingShortDescription" destination="fZQ-HC-doY" id="pC7-B9-t5W"/>
+                <outlet property="settingsTitle" destination="wqz-4c-QOT" id="k78-kW-VVo"/>
+            </connections>
+            <point key="canvasLocation" x="139.85507246376812" y="119.86607142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="die.face.2.fill" catalog="system" width="128" height="114"/>
+    </resources>
+</document>
