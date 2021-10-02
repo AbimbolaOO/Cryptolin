@@ -25,10 +25,12 @@ class NINViewController: UIViewController {
         navigationController?.navigationBar.topItem?.backBarButtonItem = backBarButtton
         
         infoView.layer.cornerRadius = 4
+        
         ninTextView.layer.borderColor = UIColor.darkGray.cgColor
         ninTextView.layer.borderWidth = 1
         ninTextView.layer.cornerRadius = 4
         ninTextView.attributedPlaceholder = NSAttributedString(string: "Enter NIN", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+        
         verificationBtn.layer.cornerRadius = 4
     }
     

@@ -9,13 +9,20 @@ import UIKit
 
 class BaseTabBarController: UITabBarController {
     
+    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let transactionsController = storyBoard.instantiateViewController(withIdentifier: TransactionsViewController.storyboardId) as! TransactionsViewController
+        
+        let savingsViewController = storyBoard.instantiateViewController(withIdentifier: SavingsViewController.storyboardId) as! SavingsViewController
+        
         viewControllers = [
             createView(viewController: OverviewViewController(), label: "Overview", imageName: "rectangle.grid.2x2"),
             createView(viewController: WalletViewController(), label: "Wallets", imageName: "wallet.pass.fill"),
-            createView(viewController: SavingsViewController(), label: "Savings", imageName: "dollarsign.circle"),
-            createView(viewController: TransactionsViewController(), label: "Transactions", imageName: "filemenu.and.selection"),
+            createView(viewController: savingsViewController, label: "Savings", imageName: "dollarsign.circle"),
+            createView(viewController: transactionsController, label: "Transactions", imageName: "filemenu.and.selection"),
             createView(viewController: SettingsViewController(), label: "Settings", imageName: "gearshape")
         ]
         tabBar.isTranslucent = false
