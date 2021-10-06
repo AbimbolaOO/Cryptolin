@@ -6,10 +6,15 @@
 //
 
 import UIKit
+import SideMenu
 
 class OverviewViewController: UICollectionViewController {
     
+    var menu: SideMenuNavigationController!
+   
+    
     init(){
+        
         let layout = UICollectionViewCompositionalLayout { (sectionNumber, _) -> NSCollectionLayoutSection?  in
             switch sectionNumber{
             case 0:
@@ -69,8 +74,10 @@ class OverviewViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Utils.setupMenuViewController(MenuViewController.self, withIndentifier: MenuViewController.reuseIdentifier, menu: &menu, viewForGesture: view)
+        
         navigationItem.titleView = NavbarTilteView()
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal"), style: .plain, target: nil, action: nil)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal"), style: .plain, target: self, action: #selector(showMenu))
         
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellid")
         collectionView.register(UINib(nibName: Section1CollectionViewCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: Section1CollectionViewCell.reuseIdentifier)
@@ -79,6 +86,10 @@ class OverviewViewController: UICollectionViewController {
         
         collectionView.showsVerticalScrollIndicator = false
         
+    }
+
+    @objc func showMenu(){
+        present(menu, animated: true, completion: nil)
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {

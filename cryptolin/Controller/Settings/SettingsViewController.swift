@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import SideMenu
 
 class SettingsViewController: UITabBarController, UITableViewDataSource, UITableViewDelegate {
+    
+    var menu: SideMenuNavigationController!
     
     let tableViewCellId = SettingsTableViewCell.reUseIdentifier
     let tableView = UITableView()
@@ -17,8 +20,10 @@ class SettingsViewController: UITabBarController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Utils.setupMenuViewController(MenuViewController.self, withIndentifier: MenuViewController.reuseIdentifier, menu: &menu, viewForGesture: view)
+        
         navigationItem.titleView = NavbarTilteView()
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal"), style: .plain, target: nil, action: nil)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal"), style: .plain, target: self, action: #selector(showMenu))
         
         view.addSubview(tableView)
         
@@ -31,6 +36,10 @@ class SettingsViewController: UITabBarController, UITableViewDataSource, UITable
         
         setupTableView()
         
+    }
+    
+    @objc func showMenu(){
+        present(menu, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

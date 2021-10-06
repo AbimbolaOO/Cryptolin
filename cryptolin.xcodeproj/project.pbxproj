@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F8FDEB9270B801F0071087B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8FDEB8270B801F0071087B /* MenuViewController.swift */; };
+		5F8FDEBC270C74370071087B /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 5F8FDEBB270C74370071087B /* SideMenu */; };
+		5F8FDEBF270CC8B90071087B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8FDEBE270CC8B90071087B /* Utils.swift */; };
 		5F9476AB27046EB900654F63 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9476AA27046EB900654F63 /* TransactionsViewController.swift */; };
 		5F9476AD2704743F00654F63 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9476AC2704743F00654F63 /* ProfileViewController.swift */; };
 		5F9476AF2704926F00654F63 /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9476AE2704926F00654F63 /* AccountsViewController.swift */; };
@@ -44,6 +47,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F8FDEB8270B801F0071087B /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		5F8FDEBE270CC8B90071087B /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		5F9476AA27046EB900654F63 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
 		5F9476AC2704743F00654F63 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5F9476AE2704926F00654F63 /* AccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
@@ -87,12 +92,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F8FDEBC270C74370071087B /* SideMenu in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F8FDEBD270CC89F0071087B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5F8FDEBE270CC8B90071087B /* Utils.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5F8FDEC0270D50040071087B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		5F9476BE270634DA00654F63 /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +144,7 @@
 		5FA4E8C32703441100F17F3D /* cryptolin */ = {
 			isa = PBXGroup;
 			children = (
+				5F8FDEBD270CC89F0071087B /* Helpers */,
 				5FA4E8DA27034F0B00F17F3D /* Model */,
 				5FA4E8D927034EEE00F17F3D /* View */,
 				5FA4E8D827034EE500F17F3D /* Controller */,
@@ -140,12 +162,14 @@
 		5FA4E8D827034EE500F17F3D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5F8FDEC0270D50040071087B /* Login */,
 				5FA4E8DF27034F5200F17F3D /* Settings */,
 				5FA4E8DE27034F4400F17F3D /* Transactions */,
 				5FA4E8DD27034F3400F17F3D /* Savings */,
 				5FA4E8DC27034F2800F17F3D /* Wallet */,
 				5FA4E8DB27034F1F00F17F3D /* Overview */,
 				5FA4E8E02703500A00F17F3D /* BaseTabBarController.swift */,
+				5F8FDEB8270B801F0071087B /* MenuViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -263,6 +287,9 @@
 			dependencies = (
 			);
 			name = cryptolin;
+			packageProductDependencies = (
+				5F8FDEBB270C74370071087B /* SideMenu */,
+			);
 			productName = cryptolin;
 			productReference = 5FA4E8C12703441100F17F3D /* cryptolin.app */;
 			productType = "com.apple.product-type.application";
@@ -291,6 +318,9 @@
 				Base,
 			);
 			mainGroup = 5FA4E8B82703441100F17F3D;
+			packageReferences = (
+				5F8FDEBA270C74370071087B /* XCRemoteSwiftPackageReference "SideMenu" */,
+			);
 			productRefGroup = 5FA4E8C22703441100F17F3D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -326,6 +356,7 @@
 				5FF0E34F270697BC004061E0 /* Section2CollectionViewCell.swift in Sources */,
 				5FF0E34927069438004061E0 /* Section1CollectionViewCell.swift in Sources */,
 				5FA4E8E12703500A00F17F3D /* BaseTabBarController.swift in Sources */,
+				5F8FDEBF270CC8B90071087B /* Utils.swift in Sources */,
 				5FA4E8C92703441100F17F3D /* ViewController.swift in Sources */,
 				5FA4E8EA2703718700F17F3D /* SettingTableViewCellData.swift in Sources */,
 				5FA4E8EF2703A69C00F17F3D /* NINViewController.swift in Sources */,
@@ -345,6 +376,7 @@
 				5F9476AF2704926F00654F63 /* AccountsViewController.swift in Sources */,
 				5F9476B72704C7E600654F63 /* ReferralsViewController.swift in Sources */,
 				5F9476C12706352C00654F63 /* WalletCollectionViewCell.swift in Sources */,
+				5F8FDEB9270B801F0071087B /* MenuViewController.swift in Sources */,
 				5FA4E8EC270396EB00F17F3D /* NavbarTilteView.swift in Sources */,
 				5F9476CC27066E5F00654F63 /* BackgroundSupplementaryView.swift in Sources */,
 				5F9476D22706722800654F63 /* WalletHeaderCollectionViewCell.swift in Sources */,
@@ -503,7 +535,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -533,7 +565,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -572,6 +604,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5F8FDEBA270C74370071087B /* XCRemoteSwiftPackageReference "SideMenu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5F8FDEBB270C74370071087B /* SideMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5F8FDEBA270C74370071087B /* XCRemoteSwiftPackageReference "SideMenu" */;
+			productName = SideMenu;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5FA4E8B92703441100F17F3D /* Project object */;
 }

@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import SideMenu
 
 class WalletViewController: UICollectionViewController{
+    
+    var menu: SideMenuNavigationController!
     
     init(){
         let layout = UICollectionViewCompositionalLayout{(sectionNumber, _) -> NSCollectionLayoutSection? in
@@ -47,8 +50,10 @@ class WalletViewController: UICollectionViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Utils.setupMenuViewController(MenuViewController.self, withIndentifier: MenuViewController.reuseIdentifier, menu: &menu, viewForGesture: view)
+        
         navigationItem.titleView = NavbarTilteView()
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal"), style: .plain, target: nil, action: nil)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal"), style: .plain, target: self, action: #selector(showMenu))
         
         collectionView.register(UINib(nibName: WalletCollectionViewCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: WalletCollectionViewCell.reuseIdentifier)
         
@@ -56,6 +61,10 @@ class WalletViewController: UICollectionViewController{
         
         collectionView.showsVerticalScrollIndicator = false
         
+    }
+    
+    @objc func showMenu(){
+        present(menu, animated: true, completion: nil)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
