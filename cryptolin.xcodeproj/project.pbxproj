@@ -10,6 +10,7 @@
 		5F8FDEB9270B801F0071087B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8FDEB8270B801F0071087B /* MenuViewController.swift */; };
 		5F8FDEBC270C74370071087B /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 5F8FDEBB270C74370071087B /* SideMenu */; };
 		5F8FDEBF270CC8B90071087B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8FDEBE270CC8B90071087B /* Utils.swift */; };
+		5F8FDEC2270DCBB20071087B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8FDEC1270DCBB20071087B /* SignUpViewController.swift */; };
 		5F9476AB27046EB900654F63 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9476AA27046EB900654F63 /* TransactionsViewController.swift */; };
 		5F9476AD2704743F00654F63 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9476AC2704743F00654F63 /* ProfileViewController.swift */; };
 		5F9476AF2704926F00654F63 /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9476AE2704926F00654F63 /* AccountsViewController.swift */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		5F8FDEB8270B801F0071087B /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		5F8FDEBE270CC8B90071087B /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		5F8FDEC1270DCBB20071087B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5F9476AA27046EB900654F63 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
 		5F9476AC2704743F00654F63 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5F9476AE2704926F00654F63 /* AccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		5F8FDEC0270D50040071087B /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				5F8FDEC1270DCBB20071087B /* SignUpViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				5FA4E8C52703441100F17F3D /* AppDelegate.swift in Sources */,
 				5F9476B12704AA5D00654F63 /* PreferencesViewController.swift in Sources */,
 				5FF0E3442706913F004061E0 /* BackgroundForSectionsInOverview.swift in Sources */,
+				5F8FDEC2270DCBB20071087B /* SignUpViewController.swift in Sources */,
 				5FA4E8E3270354D200F17F3D /* SettingsViewController.swift in Sources */,
 				5F9476B92704D7F400654F63 /* SavingsViewController.swift in Sources */,
 				5F9476B32704B7AC00654F63 /* SecurityViewController.swift in Sources */,
