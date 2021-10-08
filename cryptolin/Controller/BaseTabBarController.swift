@@ -40,6 +40,7 @@ class BaseTabBarController: UITabBarController {
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor.systemBlue
         appearance.titleTextAttributes = attributes
+        appearance.shadowColor = .clear
         
         vc.navigationBar.standardAppearance = appearance;
         vc.navigationBar.scrollEdgeAppearance = vc.navigationBar.standardAppearance

@@ -22,4 +22,19 @@ class Utils{
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: viewForGesture)
     }
+    
+    static func createViewInNavbar(viewController: UIViewController) -> UIViewController{
+        let vc = UINavigationController(rootViewController: viewController)
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor.systemBlue
+        appearance.shadowColor = .clear
+        
+        vc.navigationBar.standardAppearance = appearance;
+        vc.navigationBar.scrollEdgeAppearance = vc.navigationBar.standardAppearance
+        vc.navigationBar.tintColor = UIColor.white
+        
+        return vc
+    }
 }
