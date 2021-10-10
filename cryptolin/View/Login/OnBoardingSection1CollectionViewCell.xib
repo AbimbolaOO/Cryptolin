@@ -61,6 +61,11 @@
                 <constraint firstItem="CLP-eq-Wbi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="tRD-g8-4yL"/>
             </constraints>
             <size key="customSize" width="282" height="415"/>
+            <connections>
+                <outlet property="iconImage" destination="jXP-rp-ysD" id="pZz-Ym-3j3"/>
+                <outlet property="viewShortDescription" destination="4sZ-kE-u67" id="MR3-SW-et0"/>
+                <outlet property="viewTitle" destination="blc-5u-TYX" id="AXU-XZ-fl4"/>
+            </connections>
             <point key="canvasLocation" x="352" y="222"/>
         </collectionViewCell>
     </objects>

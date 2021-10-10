@@ -10,7 +10,7 @@ import UIKit
 class OnBoardingSection2CollectionViewCell: UICollectionViewCell {
     
     static let reuseIdentifier = String(describing: OnBoardingSection2CollectionViewCell.self)
-    
+
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var getStartedBtn: UIButton!
     
@@ -24,18 +24,6 @@ class OnBoardingSection2CollectionViewCell: UICollectionViewCell {
         pageControl.setIndicatorImage(UIImage(systemName: "minus.square"), forPage: startPage)
         pageControl.pageIndicatorTintColor = UIColor(white: 0.7, alpha: 1)
         pageControl.currentPageIndicatorTintColor = UIColor(white: 1, alpha: 1)
-        
-        //        pagingCtrl.backgroundStyl
-        //        pagingCtrl.subviews.transform = CGAffineTransform(scaleX: 2, y: 2)
-        //        pagingCtrl.subviews.forEach {
-        //                $0.transform = CGAffineTransform(scaleX: 3, y: 1)
-        //            }
-        
-        //        getStartedBtn.addTarget(self, action: #selector(popSignUpScreen), for: .touchUpInside)
     }
-    
-    //    @objc func popSignUpScreen(){
-    //        print("Btn selected")
-    //    }
     
 }

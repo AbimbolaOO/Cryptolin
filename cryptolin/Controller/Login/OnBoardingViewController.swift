@@ -7,10 +7,6 @@
 
 import UIKit
 
-//protocol PagingCtrl{
-//
-//}
-
 class OnBoardingViewController: UICollectionViewController{
     
     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
@@ -91,12 +87,13 @@ class OnBoardingViewController: UICollectionViewController{
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         switch indexPath.section {
         case 0:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnBoardingSection1CollectionViewCell.reuseIdentifier, for: indexPath) as? OnBoardingSection1CollectionViewCell else{
                 fatalError("couldn't create cell")
             }
-//            cell.
+            cell.data = OnBoardingCollectionViewCellData.list[indexPath.row]
             return cell
             
         default:
@@ -122,7 +119,6 @@ class OnBoardingViewController: UICollectionViewController{
             let signUpViewController = storyBoard.instantiateViewController(withIdentifier: SignUpViewController.storyboardId) as! SignUpViewController
             navigationController?.pushViewController(signUpViewController, animated: true)
         }
-        
         
     }
     

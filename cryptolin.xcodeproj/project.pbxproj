@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F36843D2711EF0B00E15D70 /* TextFieldValidators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F36843C2711EF0B00E15D70 /* TextFieldValidators.swift */; };
 		5F8FDEB9270B801F0071087B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8FDEB8270B801F0071087B /* MenuViewController.swift */; };
 		5F8FDEBC270C74370071087B /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 5F8FDEBB270C74370071087B /* SideMenu */; };
 		5F8FDEBF270CC8B90071087B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8FDEBE270CC8B90071087B /* Utils.swift */; };
@@ -46,6 +47,7 @@
 		5FB428102710BDDB0039F10B /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB4280F2710BDDB0039F10B /* OTPViewController.swift */; };
 		5FB428122710C5CC0039F10B /* SetUpPINViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB428112710C5CC0039F10B /* SetUpPINViewController.swift */; };
 		5FB428142710C6630039F10B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB428132710C6630039F10B /* LoginViewController.swift */; };
+		5FB428162710DFE60039F10B /* OnBoardingCollectionViewCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB428152710DFE60039F10B /* OnBoardingCollectionViewCellData.swift */; };
 		5FF0E3442706913F004061E0 /* BackgroundForSectionsInOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF0E3432706913F004061E0 /* BackgroundForSectionsInOverview.swift */; };
 		5FF0E34927069438004061E0 /* Section1CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF0E34727069438004061E0 /* Section1CollectionViewCell.swift */; };
 		5FF0E34A27069438004061E0 /* Section1CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF0E34827069438004061E0 /* Section1CollectionViewCell.xib */; };
@@ -56,6 +58,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F36843C2711EF0B00E15D70 /* TextFieldValidators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidators.swift; sourceTree = "<group>"; };
 		5F8FDEB8270B801F0071087B /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		5F8FDEBE270CC8B90071087B /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		5F8FDEC1270DCBB20071087B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +99,7 @@
 		5FB4280F2710BDDB0039F10B /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		5FB428112710C5CC0039F10B /* SetUpPINViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpPINViewController.swift; sourceTree = "<group>"; };
 		5FB428132710C6630039F10B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5FB428152710DFE60039F10B /* OnBoardingCollectionViewCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCollectionViewCellData.swift; sourceTree = "<group>"; };
 		5FF0E3432706913F004061E0 /* BackgroundForSectionsInOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundForSectionsInOverview.swift; sourceTree = "<group>"; };
 		5FF0E34727069438004061E0 /* Section1CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section1CollectionViewCell.swift; sourceTree = "<group>"; };
 		5FF0E34827069438004061E0 /* Section1CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Section1CollectionViewCell.xib; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				5F8FDEBE270CC8B90071087B /* Utils.swift */,
+				5F36843C2711EF0B00E15D70 /* TextFieldValidators.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				5FA4E8E92703718700F17F3D /* SettingTableViewCellData.swift */,
+				5FB428152710DFE60039F10B /* OnBoardingCollectionViewCellData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -394,6 +400,7 @@
 				5FF0E34927069438004061E0 /* Section1CollectionViewCell.swift in Sources */,
 				5FA4E8E12703500A00F17F3D /* BaseTabBarController.swift in Sources */,
 				5F8FDEBF270CC8B90071087B /* Utils.swift in Sources */,
+				5F36843D2711EF0B00E15D70 /* TextFieldValidators.swift in Sources */,
 				5FA4E8C92703441100F17F3D /* ViewController.swift in Sources */,
 				5FA4E8EA2703718700F17F3D /* SettingTableViewCellData.swift in Sources */,
 				5FB428102710BDDB0039F10B /* OTPViewController.swift in Sources */,
@@ -423,6 +430,7 @@
 				5F8FDEB9270B801F0071087B /* MenuViewController.swift in Sources */,
 				5FA4E8EC270396EB00F17F3D /* NavbarTilteView.swift in Sources */,
 				5F9476CC27066E5F00654F63 /* BackgroundSupplementaryView.swift in Sources */,
+				5FB428162710DFE60039F10B /* OnBoardingCollectionViewCellData.swift in Sources */,
 				5F9476D22706722800654F63 /* WalletHeaderCollectionViewCell.swift in Sources */,
 				5F9476B52704BE9B00654F63 /* PaymentLinkViewController.swift in Sources */,
 			);
