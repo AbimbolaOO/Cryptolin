@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F0E528127134A3000D982D5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5F0E528027134A3000D982D5 /* FirebaseAuth */; };
+		5F0E528327134A3000D982D5 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 5F0E528227134A3000D982D5 /* FirebaseDatabase */; };
+		5F0E52852713518300D982D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F0E52842713518300D982D5 /* GoogleService-Info.plist */; };
 		5F36843D2711EF0B00E15D70 /* TextFieldValidators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F36843C2711EF0B00E15D70 /* TextFieldValidators.swift */; };
 		5F8FDEB9270B801F0071087B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8FDEB8270B801F0071087B /* MenuViewController.swift */; };
 		5F8FDEBC270C74370071087B /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 5F8FDEBB270C74370071087B /* SideMenu */; };
@@ -58,6 +61,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F0E52842713518300D982D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5F36843C2711EF0B00E15D70 /* TextFieldValidators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidators.swift; sourceTree = "<group>"; };
 		5F8FDEB8270B801F0071087B /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		5F8FDEBE270CC8B90071087B /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -114,7 +118,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F0E528327134A3000D982D5 /* FirebaseDatabase in Frameworks */,
 				5F8FDEBC270C74370071087B /* SideMenu in Frameworks */,
+				5F0E528127134A3000D982D5 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +189,7 @@
 				5FA4E8CD2703441400F17F3D /* Assets.xcassets */,
 				5FA4E8CF2703441400F17F3D /* LaunchScreen.storyboard */,
 				5FA4E8D22703441400F17F3D /* Info.plist */,
+				5F0E52842713518300D982D5 /* GoogleService-Info.plist */,
 			);
 			path = cryptolin;
 			sourceTree = "<group>";
@@ -330,6 +337,8 @@
 			name = cryptolin;
 			packageProductDependencies = (
 				5F8FDEBB270C74370071087B /* SideMenu */,
+				5F0E528027134A3000D982D5 /* FirebaseAuth */,
+				5F0E528227134A3000D982D5 /* FirebaseDatabase */,
 			);
 			productName = cryptolin;
 			productReference = 5FA4E8C12703441100F17F3D /* cryptolin.app */;
@@ -361,6 +370,7 @@
 			mainGroup = 5FA4E8B82703441100F17F3D;
 			packageReferences = (
 				5F8FDEBA270C74370071087B /* XCRemoteSwiftPackageReference "SideMenu" */,
+				5F0E527F27134A3000D982D5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 5FA4E8C22703441100F17F3D /* Products */;
 			projectDirPath = "";
@@ -384,6 +394,7 @@
 				5FF0E350270697BC004061E0 /* Section2CollectionViewCell.xib in Resources */,
 				5FF0E35427069FB7004061E0 /* Section3CollectionViewCell.xib in Resources */,
 				5FB4280A270F82B80039F10B /* OnBoardingSection1CollectionViewCell.xib in Resources */,
+				5F0E52852713518300D982D5 /* GoogleService-Info.plist in Resources */,
 				5FA4E8CC2703441100F17F3D /* Main.storyboard in Resources */,
 				5FB4280E270F82FA0039F10B /* OnBoardingSection2CollectionViewCell.xib in Resources */,
 			);
@@ -658,6 +669,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5F0E527F27134A3000D982D5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 		5F8FDEBA270C74370071087B /* XCRemoteSwiftPackageReference "SideMenu" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
@@ -669,6 +688,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5F0E528027134A3000D982D5 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5F0E527F27134A3000D982D5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		5F0E528227134A3000D982D5 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5F0E527F27134A3000D982D5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
 		5F8FDEBB270C74370071087B /* SideMenu */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5F8FDEBA270C74370071087B /* XCRemoteSwiftPackageReference "SideMenu" */;

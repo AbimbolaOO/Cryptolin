@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpViewController: UIViewController, UITextFieldDelegate{
     
@@ -38,6 +39,15 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var validatePasswordLabel: UILabel!
     @IBOutlet weak var validateConfirmPasswordLabel: UILabel!
     
+    let activityIndicatorView: UIActivityIndicatorView = {
+        let aiv = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
+        aiv.color = .black
+        aiv.startAnimating()
+        aiv.hidesWhenStopped = true
+        aiv.translatesAutoresizingMaskIntoConstraints = false
+        return aiv
+    }()
+    
     lazy var textFieldArr: [UITextField] = [firstName, lastName, email, phoneNumber, password, confirmPassord]
     
     override func viewDidLoad() {
@@ -61,12 +71,17 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         password.tag = 4
         confirmPassord.tag = 5
         
+        view.addSubview(activityIndicatorView)
+        activityIndicatorView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        activityIndicatorView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        activityIndicatorView.isHidden = true
+        
         let backBarButtton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.topItem?.backBarButtonItem = backBarButtton
         
         smallContentView.layer.cornerRadius = 8
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         super.viewWillAppear(animated)
@@ -85,6 +100,21 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         
     }
     
+//    var confirmEmailAddress: String!
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//        activityIndicatorView.isHidden = false
+//        if segue.identifier == "signUpBtnToOtpSegue"{
+//            Auth.auth().createUser(withEmail: email.text!, password: password.text!) { authResult, error in
+//                guard let user = authResult?.user, error == nil else {
+//                    fatalError("coudn't create user on firebase")
+//                }
+//                self.confirmEmailAddress = user.email
+//                print("\(user.email!) created")
+//            }
+//        }
+//    }
+    
     
     @IBAction func checkTextFieldValidity(_ sender: UITextField) {
         
@@ -94,46 +124,84 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
                 let trimmedText = sender.text!.trimmingCharacters(in: .whitespacesAndNewlines)
                 if trimmedText.count < 2{
                     validateFirstNameLabel.text = "invalid"
+                    signUpBtn.isEnabled = false
                 }else{
                     validateFirstNameLabel.text = " "
+                    isFormFieldValid()
                 }
             case .lastName:
                 let trimmedText = sender.text!.trimmingCharacters(in: .whitespacesAndNewlines)
                 if trimmedText.count < 2{
                     validateLastNameLabel.text = "invalid"
+                    isFormFieldValid()
                 }else{
                     validateLastNameLabel.text = " "
+                    isFormFieldValid()
                 }
             case .email:
-                if sender.text!.count < 8{
+                let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+                let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+                if !emailPred.evaluate(with: sender.text!) {
                     validateEmailLabel.text = "Invalid email"
+                    isFormFieldValid()
                 }else{
                     validateEmailLabel.text = " "
+                    isFormFieldValid()
                 }
             case .phoneNumber:
                 let num = Int(sender.text!) ?? 0
-                if sender.text!.count < 12{
+                if sender.text!.count != 11{
                     validatePhoneNumberLabel.text = "Invalid phone number"
+                    isFormFieldValid()
                 }else if num == 0{
-                    validatePhoneNumberLabel.text = "Invalid phone number"}
-                else{
+                    validatePhoneNumberLabel.text = "Invalid phone number"
+                    isFormFieldValid()
+                }else{
                     validatePhoneNumberLabel.text = " "
+                    isFormFieldValid()
                 }
             case .password:
                 if sender.text!.count < 8{
                     validatePasswordLabel.text = "Password too short"
+                    validateConfirmPasswordLabel.text = "Password doesn't match"
+                    isFormFieldValid()
                 }else{
-                    validatePasswordLabel.text = " "
+                    if sender.text == confirmPassord.text{
+                        validatePasswordLabel.text = " "
+                        validateConfirmPasswordLabel.text = " "
+                        isFormFieldValid()
+                    }else{
+                        validatePasswordLabel.text = " "
+                        validateConfirmPasswordLabel.text = "Password doesn't match"
+                        isFormFieldValid()
+                    }
+                    
                 }
             case .confirmPassord:
                 if sender.text != password.text{
                     validateConfirmPasswordLabel.text = "Password doesn't match"
+                    isFormFieldValid()
                 }else{
                     validateConfirmPasswordLabel.text = " "
+                    isFormFieldValid()
                 }
             }
         }
         
+    }
+    
+    func isFormFieldValid(){
+        if validateFirstNameLabel.text == " " && validateLastNameLabel.text == " " && validateEmailLabel.text == " " && validatePhoneNumberLabel.text == " " && validatePasswordLabel.text == " " && validateConfirmPasswordLabel.text == " " &&
+            firstName.text! != "" &&
+            lastName.text! != "" &&
+            email.text! != "" &&
+            phoneNumber.text! != "" &&
+            password.text! != "" &&
+            confirmPassord.text! != ""{
+            self.signUpBtn.isEnabled = true
+        }else{
+            self.signUpBtn.isEnabled = false
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -144,7 +212,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         }
         else{
             textField.resignFirstResponder()
-            self.signUpBtn.isEnabled = true
         }
         
         return true

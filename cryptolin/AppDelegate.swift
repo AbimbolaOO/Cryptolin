@@ -6,19 +6,15 @@
 //
 
 import UIKit
-import SideMenu
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-//    var menu: SideMenuNavigationController!
-//    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-//        let viewcontrol = storyBoard.instantiateViewController(withIdentifier: MenuViewController.reuseIdentifier) as! MenuViewController
-//        menu = SideMenuNavigationController(rootViewController: viewcontrol)
-//        SideMenuManager.default.leftMenuNavigationController = menu
+        FirebaseApp.configure()
         return true
     }
 

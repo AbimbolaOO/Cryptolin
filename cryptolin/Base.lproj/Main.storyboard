@@ -621,7 +621,7 @@
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Sign up for an account"/>
                                                                 <connections>
-                                                                    <segue destination="Hs8-Wb-JwP" kind="show" id="P6G-bx-NgJ"/>
+                                                                    <segue destination="Hs8-Wb-JwP" kind="show" identifier="signUpBtnToOtpSegue" id="P6G-bx-NgJ"/>
                                                                 </connections>
                                                             </button>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hq0-rA-3g7">
