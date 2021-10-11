@@ -8,6 +8,8 @@
 import UIKit
 
 class OTPViewController: UIViewController {
+    
+    static let storyboardId = String(describing: OTPViewController.self)
 
     override func viewDidLoad() {
         super.viewDidLoad()

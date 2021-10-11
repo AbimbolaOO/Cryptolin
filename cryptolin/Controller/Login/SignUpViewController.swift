@@ -80,6 +80,22 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         navigationController?.navigationBar.topItem?.backBarButtonItem = backBarButtton
         
         smallContentView.layer.cornerRadius = 8
+        
+        signUpBtn.addTarget(self, action: #selector(authenticateForm), for: .touchUpInside)
+    }
+    
+    @objc func authenticateForm(){
+        print("welcome to the club")
+        Auth.auth().createUser(withEmail: email.text!, password: password.text!) { [self] authResult, error in
+            guard let user = authResult?.user, error == nil else {
+                fatalError("coudn't create user on firebase")
+            }
+            print("\(user.email!) created")
+            if user.email == self.email.text{
+                let oTPViewController = storyBoard.instantiateViewController(withIdentifier: OTPViewController.storyboardId) as! OTPViewController
+                navigationController?.pushViewController(oTPViewController, animated: true)
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
