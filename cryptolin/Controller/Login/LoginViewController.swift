@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -34,8 +35,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loginBtn.layer.cornerRadius = 4
         containerView.layer.cornerRadius = 8
         
-        
-//        loginBtn.setTitleColor(.white, for: .disabled)
         loginBtn.isEnabled = false
         
         email.delegate = self
@@ -49,6 +48,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let backBarButtton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.topItem?.backBarButtonItem = backBarButtton
         
+        loginBtn.addTarget(self, action: #selector(loginToAccoutBtn), for: .touchUpInside)
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -56,9 +57,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewWillDisappear(animated)
     }
     
-    @IBAction func loginToAccoutBtn(_ sender: Any) {
-        navigationController?.pushViewController(BaseTabBarController(), animated: true)
+    @objc func loginToAccoutBtn(){
+        let email = self.email.text!
+        let password = self.password.text!
+        Auth.auth().signIn(withEmail: email, password: password) { [self] authResult, error in
+            if error != nil{
+                fatalError("Omo which kind login be this")
+            }else {
+                navigationController?.pushViewController(BaseTabBarController(), animated: true)
+            }
+        }
     }
+    
     
     @IBAction func goToSignUpPageBtn(_ sender: Any) {
         let signUpViewController = storyBoard.instantiateViewController(withIdentifier: SignUpViewController.storyboardId) as! SignUpViewController
@@ -70,18 +80,35 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if let field = formfield(rawValue: sender.tag){
             switch field {
             case .email:
-                if sender.text!.count < 8{
+                let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+                let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+                if !emailPred.evaluate(with: sender.text!) {
                     validateEmailLabel.text = "Invalid email"
+                    isFormFieldValid()
                 }else{
                     validateEmailLabel.text = " "
+                    isFormFieldValid()
                 }
             case .password:
                 if sender.text!.count < 8{
                     validatePasswordLabel.text = "Password too short"
+                    isFormFieldValid()
                 }else{
                     validatePasswordLabel.text = " "
+                    isFormFieldValid()
                 }
             }
+        }
+    }
+    
+    func isFormFieldValid(){
+        if validateEmailLabel.text == " " &&
+            validatePasswordLabel.text == " " &&
+            email.text! != "" &&
+            password.text! != "" {
+            self.loginBtn.isEnabled = true
+        }else{
+            self.loginBtn.isEnabled = false
         }
     }
     
