@@ -85,15 +85,16 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     }
     
     @objc func authenticateForm(){
-        print("welcome to the club")
+        activityIndicatorView.isHidden = false
         Auth.auth().createUser(withEmail: email.text!, password: password.text!) { [self] authResult, error in
             guard let user = authResult?.user, error == nil else {
                 fatalError("coudn't create user on firebase")
             }
             print("\(user.email!) created")
             if user.email == self.email.text{
-                let oTPViewController = storyBoard.instantiateViewController(withIdentifier: OTPViewController.storyboardId) as! OTPViewController
-                navigationController?.pushViewController(oTPViewController, animated: true)
+                let vc = storyBoard.instantiateViewController(withIdentifier: SetUpPINViewController.storyboardId) as! SetUpPINViewController
+                activityIndicatorView.isHidden = true
+                navigationController?.pushViewController(vc, animated: true)
             }
         }
     }
@@ -115,21 +116,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         navigationController?.pushViewController(loginViewController, animated: true)
         
     }
-    
-//    var confirmEmailAddress: String!
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        activityIndicatorView.isHidden = false
-//        if segue.identifier == "signUpBtnToOtpSegue"{
-//            Auth.auth().createUser(withEmail: email.text!, password: password.text!) { authResult, error in
-//                guard let user = authResult?.user, error == nil else {
-//                    fatalError("coudn't create user on firebase")
-//                }
-//                self.confirmEmailAddress = user.email
-//                print("\(user.email!) created")
-//            }
-//        }
-//    }
     
     
     @IBAction func checkTextFieldValidity(_ sender: UITextField) {
@@ -230,6 +216,18 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
             textField.resignFirstResponder()
         }
         
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool{
+        let maxLength = 11
+        if textField.tag == 3{
+            let currentString: NSString = textField.text! as NSString
+            let newString: NSString = currentString.replacingCharacters(in: range, with:string) as NSString
+            let invalidCharacters = CharacterSet(charactersIn: "0123456789").inverted
+            return newString.length <= maxLength && string.rangeOfCharacter(from: invalidCharacters) == nil
+        }
         return true
     }
     

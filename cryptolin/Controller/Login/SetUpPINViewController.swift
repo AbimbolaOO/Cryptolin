@@ -8,6 +8,8 @@
 import UIKit
 
 class SetUpPINViewController: UIViewController {
+    
+    static let storyboardId = String(describing: SetUpPINViewController.self)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +19,7 @@ class SetUpPINViewController: UIViewController {
         
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         super.viewWillDisappear(animated)
     }
