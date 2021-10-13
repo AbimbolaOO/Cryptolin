@@ -19,6 +19,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         case confirmPassord
     }
     
+    var db: Firestore!
+    
     static let storyboardId = String(describing: SignUpViewController.self)
     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
     
@@ -52,6 +54,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        db = Firestore.firestore()
         
         signUpBtn.isEnabled = false
         
@@ -92,9 +96,25 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
             }
             print("\(user.email!) created")
             if user.email == self.email.text{
+                setupNewUser(email: email.text!)
                 let vc = storyBoard.instantiateViewController(withIdentifier: SetUpPINViewController.storyboardId) as! SetUpPINViewController
                 activityIndicatorView.isHidden = true
                 navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
+    
+    private func setupNewUser(email: String){
+        db.collection("users").document(email).setData([
+            "firstName": firstName.text!,
+            "last": lastName.text!,
+            "email": email,
+            "phoneNumber": phoneNumber.text!
+        ]){ err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
             }
         }
     }
