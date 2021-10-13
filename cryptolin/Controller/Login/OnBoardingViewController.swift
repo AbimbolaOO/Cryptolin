@@ -117,6 +117,7 @@ class OnBoardingViewController: UICollectionViewController{
         
         if currentPage == 4{
             let signUpViewController = storyBoard.instantiateViewController(withIdentifier: SignUpViewController.storyboardId) as! SignUpViewController
+            
             navigationController?.pushViewController(signUpViewController, animated: true)
         }
         

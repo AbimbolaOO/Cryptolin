@@ -14,21 +14,7 @@ class BaseTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let transactionsController = storyBoard.instantiateViewController(withIdentifier: TransactionsViewController.storyboardId) as! TransactionsViewController
-        
-        let savingsViewController = storyBoard.instantiateViewController(withIdentifier: SavingsViewController.storyboardId) as! SavingsViewController
-        
-        viewControllers = [
-            createView(viewController: OverviewViewController(), label: "Overview", imageName: "rectangle.grid.2x2"),
-            createView(viewController: WalletViewController(), label: "Wallets", imageName: "wallet.pass.fill"),
-            createView(viewController: savingsViewController, label: "Savings", imageName: "dollarsign.circle"),
-            createView(viewController: transactionsController, label: "Transactions", imageName: "filemenu.and.selection"),
-            createView(viewController: SettingsViewController(), label: "Settings", imageName: "gearshape")
-        ]
-        tabBar.isTranslucent = false
-        tabBar.tintColor = UIColor.systemBlue
-        tabBar.unselectedItemTintColor = UIColor.lightGray
-        tabBar.backgroundColor = UIColor(white: 1, alpha: 1)
+        setViewsUp()
     }
     
     func createView(viewController: UIViewController, label: String, imageName: String) -> UIViewController{
@@ -49,6 +35,24 @@ class BaseTabBarController: UITabBarController {
         vc.tabBarItem.image = UIImage(systemName:imageName)
         vc.tabBarItem.title = label
         return vc
+    }
+    
+    func setViewsUp(){
+        let transactionsController = storyBoard.instantiateViewController(withIdentifier: TransactionsViewController.storyboardId) as! TransactionsViewController
+        
+        let savingsViewController = storyBoard.instantiateViewController(withIdentifier: SavingsViewController.storyboardId) as! SavingsViewController
+        
+        viewControllers = [
+            createView(viewController: OverviewViewController(), label: "Overview", imageName: "rectangle.grid.2x2"),
+            createView(viewController: WalletViewController(), label: "Wallets", imageName: "wallet.pass.fill"),
+            createView(viewController: savingsViewController, label: "Savings", imageName: "dollarsign.circle"),
+            createView(viewController: transactionsController, label: "Transactions", imageName: "filemenu.and.selection"),
+            createView(viewController: SettingsViewController(), label: "Settings", imageName: "gearshape")
+        ]
+        tabBar.isTranslucent = false
+        tabBar.tintColor = UIColor.systemBlue
+        tabBar.unselectedItemTintColor = UIColor.lightGray
+        tabBar.backgroundColor = UIColor(white: 1, alpha: 1)
     }
     
 }

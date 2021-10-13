@@ -58,13 +58,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func loginToAccoutBtn(){
+        print("btn click now just wait")
         let email = self.email.text!
         let password = self.password.text!
         Auth.auth().signIn(withEmail: email, password: password) { [self] authResult, error in
+            print("I am in prepare")
             if error != nil{
                 fatalError("Omo which kind login be this")
             }else {
-                navigationController?.pushViewController(BaseTabBarController(), animated: true)
+                guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else {
+                    fatalError("could not get scene delegate ")
+                }
+                sceneDelegate.window?.rootViewController = BaseTabBarController()
+                navigationController?.popToRootViewController(animated: true)
             }
         }
     }
@@ -116,7 +122,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         if textField.tag < textFieldArr.count - 1{
             textField.resignFirstResponder()
-            print("here is current tag: \(textField.tag)")
             textFieldArr[textField.tag + 1].becomeFirstResponder()
         }
         else{

@@ -25,7 +25,11 @@ class SetUpPINViewController: UIViewController {
     }
     
     @IBAction func createPinBtn(_ sender: Any) {
-        navigationController?.pushViewController(BaseTabBarController(), animated: true)
+        guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else {
+            fatalError("could not get scene delegate ")
+        }
+        sceneDelegate.window?.rootViewController = BaseTabBarController()
+        navigationController?.popToRootViewController(animated: true)
     }
 
 }

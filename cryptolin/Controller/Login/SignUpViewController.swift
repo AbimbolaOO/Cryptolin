@@ -95,7 +95,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
                 fatalError("coudn't create user on firebase")
             }
             print("\(user.email!) created")
-            if user.email == self.email.text{
+            if user.email == String.lowercased(self.email.text!)(){
                 setupNewUser(email: email.text!)
                 let vc = storyBoard.instantiateViewController(withIdentifier: SetUpPINViewController.storyboardId) as! SetUpPINViewController
                 activityIndicatorView.isHidden = true

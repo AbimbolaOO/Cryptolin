@@ -23,4 +23,8 @@ class ProfileViewController: UIViewController {
         buttonView.layer.cornerRadius = 4
         
     }
+//    override func viewWillAppear(_ animated: Bool) {
+//        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+//        super.viewWillAppear(animated)
+//    }
 }
