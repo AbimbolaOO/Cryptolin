@@ -1416,6 +1416,9 @@
                                         <rect key="frame" x="19" y="150" width="162.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Change Profile Image"/>
+                                        <connections>
+                                            <action selector="triggerChangePImg:" destination="z5h-fg-Bdr" eventType="touchUpInside" id="JMY-Mc-TMd"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -1593,6 +1596,8 @@
                     </view>
                     <connections>
                         <outlet property="buttonView" destination="MoI-m3-t42" id="5Xp-8s-gwx"/>
+                        <outlet property="changeImageBtn" destination="npD-BG-qIo" id="RJ5-Qf-cB2"/>
+                        <outlet property="profileImage" destination="efc-79-ZIc" id="Q5U-aH-6YU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KxL-zb-teb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
