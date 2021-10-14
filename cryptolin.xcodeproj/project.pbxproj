@@ -147,7 +147,6 @@
 			children = (
 				5F8FDEC1270DCBB20071087B /* SignUpViewController.swift */,
 				5FB428112710C5CC0039F10B /* SetUpPINViewController.swift */,
-				5FB4280F2710BDDB0039F10B /* OTPViewController.swift */,
 				5FB428132710C6630039F10B /* LoginViewController.swift */,
 				5FB427FA270F64570039F10B /* OnBoardingViewController.swift */,
 			);
@@ -157,6 +156,7 @@
 		5F9476BE270634DA00654F63 /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
+				5FB4280F2710BDDB0039F10B /* OTPViewController.swift */,
 				5F9476BF2706352B00654F63 /* WalletCollectionViewCell.swift */,
 				5F9476C02706352B00654F63 /* WalletCollectionViewCell.xib */,
 				5F9476D12706722800654F63 /* WalletHeaderCollectionViewCell.swift */,
