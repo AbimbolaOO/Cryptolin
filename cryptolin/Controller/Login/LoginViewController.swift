@@ -76,6 +76,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 }
                 sceneDelegate.window?.rootViewController = BaseTabBarController()
                 navigationController?.popToRootViewController(animated: true)
+                UserDefaults.standard.set(true, forKey: "LoggedIn")
+                UserDefaults.standard.synchronize()
             }
         }
     }

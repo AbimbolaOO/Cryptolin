@@ -39,6 +39,8 @@ class MenuViewController: UIViewController {
     @IBAction func goToLoginPageBtn(_ sender: Any) {
         let loginViewController = storyBoard.instantiateViewController(withIdentifier: LoginViewController.storyboardId) as! LoginViewController
         navigationController?.pushViewController(loginViewController, animated: true)
+        UserDefaults.standard.set(false, forKey: "LoggedIn")
+        UserDefaults.standard.synchronize()
     }
     
 }

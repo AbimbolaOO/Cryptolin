@@ -38,7 +38,7 @@ class OnBoardingSection2CollectionViewCell: UICollectionViewCell {
             pageControl.currentPageIndicatorTintColor = UIColor(white: 1, alpha: 1)
         }
         if currentPage > OnBoardingCollectionViewCellData.list.count - 2{
-            getStartedBtn.setTitle("Next Page", for: .normal)
+            getStartedBtn.setTitle("Sign up", for: .normal)
         }
     }
     

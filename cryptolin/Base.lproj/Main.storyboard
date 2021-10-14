@@ -2202,10 +2202,10 @@
             </objects>
             <point key="canvasLocation" x="-797" y="122"/>
         </scene>
-        <!--View Controller-->
+        <!--Biometric View Controller-->
         <scene sceneID="8FX-qR-j7a">
             <objects>
-                <viewController id="5n2-Qz-2QV" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BiometricViewController" id="5n2-Qz-2QV" customClass="BiometricViewController" customModule="cryptolin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gA0-zS-QM9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

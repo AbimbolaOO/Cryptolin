@@ -25,5 +25,7 @@
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSFaceIDUsageDescription </key>
+	<string>Use your finger prints</string>
 </dict>
 </plist>

@@ -14,6 +14,7 @@
 		5F6D81B9271703F000A74652 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 5F6D81B8271703F000A74652 /* FirebaseFirestoreSwift-Beta */; };
 		5F6D81BB271703F000A74652 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 5F6D81BA271703F000A74652 /* FirebaseStorage */; };
 		5F6D81BD271703F000A74652 /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 5F6D81BC271703F000A74652 /* FirebaseStorageSwift-Beta */; };
+		5F6D81BF2718AE7D00A74652 /* BiometricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6D81BE2718AE7C00A74652 /* BiometricViewController.swift */; };
 		5F8FDEB9270B801F0071087B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8FDEB8270B801F0071087B /* MenuViewController.swift */; };
 		5F8FDEBC270C74370071087B /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 5F8FDEBB270C74370071087B /* SideMenu */; };
 		5F8FDEBF270CC8B90071087B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8FDEBE270CC8B90071087B /* Utils.swift */; };
@@ -66,6 +67,7 @@
 /* Begin PBXFileReference section */
 		5F0E52842713518300D982D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5F36843C2711EF0B00E15D70 /* TextFieldValidators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidators.swift; sourceTree = "<group>"; };
+		5F6D81BE2718AE7C00A74652 /* BiometricViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricViewController.swift; sourceTree = "<group>"; };
 		5F8FDEB8270B801F0071087B /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		5F8FDEBE270CC8B90071087B /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		5F8FDEC1270DCBB20071087B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				5FB428112710C5CC0039F10B /* SetUpPINViewController.swift */,
 				5FB428132710C6630039F10B /* LoginViewController.swift */,
 				5FB427FA270F64570039F10B /* OnBoardingViewController.swift */,
+				5F6D81BE2718AE7C00A74652 /* BiometricViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				5FA4E8E12703500A00F17F3D /* BaseTabBarController.swift in Sources */,
 				5F8FDEBF270CC8B90071087B /* Utils.swift in Sources */,
 				5F36843D2711EF0B00E15D70 /* TextFieldValidators.swift in Sources */,
+				5F6D81BF2718AE7D00A74652 /* BiometricViewController.swift in Sources */,
 				5FA4E8C92703441100F17F3D /* ViewController.swift in Sources */,
 				5FA4E8EA2703718700F17F3D /* SettingTableViewCellData.swift in Sources */,
 				5FB428102710BDDB0039F10B /* OTPViewController.swift in Sources */,

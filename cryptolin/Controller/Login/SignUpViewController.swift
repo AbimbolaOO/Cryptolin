@@ -85,10 +85,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         
         smallContentView.layer.cornerRadius = 8
         
-        signUpBtn.addTarget(self, action: #selector(authenticateForm), for: .touchUpInside)
+        signUpBtn.addTarget(self, action: #selector(signUpForAcct), for: .touchUpInside)
     }
     
-    @objc func authenticateForm(){
+    @objc func signUpForAcct(){
         activityIndicatorView.isHidden = false
         Auth.auth().createUser(withEmail: email.text!, password: password.text!) { [self] authResult, error in
             guard let user = authResult?.user, error == nil else {
@@ -100,6 +100,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
                 let vc = storyBoard.instantiateViewController(withIdentifier: SetUpPINViewController.storyboardId) as! SetUpPINViewController
                 activityIndicatorView.isHidden = true
                 navigationController?.pushViewController(vc, animated: true)
+                UserDefaults.standard.set(true, forKey: "LoggedIn")
+                UserDefaults.standard.synchronize()
             }
         }
     }
