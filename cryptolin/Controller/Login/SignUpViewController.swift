@@ -21,6 +21,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     
     var db: Firestore!
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     static let storyboardId = String(describing: SignUpViewController.self)
     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
     
@@ -96,7 +98,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
             }
             print("\(user.email!) created")
             if user.email == String.lowercased(self.email.text!)(){
-                setupNewUser(email: email.text!)
+                setupNewUserInDataBase(email: email.text!)
+                setupNewUserInCoreData()
                 let vc = storyBoard.instantiateViewController(withIdentifier: SetUpPINViewController.storyboardId) as! SetUpPINViewController
                 activityIndicatorView.isHidden = true
                 navigationController?.pushViewController(vc, animated: true)
@@ -106,10 +109,24 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         }
     }
     
-    private func setupNewUser(email: String){
+    private func setupNewUserInCoreData(){
+        let userData = UserData(context: self.context)
+        userData.firstName = firstName.text!
+        userData.lastName = lastName.text!
+        userData.email = email.text!
+        userData.phoneNumber = phoneNumber.text!
+        do {
+            try self.context.save()
+            print("Data created in core data")
+        }catch{
+            print("Couldn't save data in coredata: \(error)")
+        }
+    }
+    
+    private func setupNewUserInDataBase(email: String){
         db.collection("users").document(email).setData([
             "firstName": firstName.text!,
-            "last": lastName.text!,
+            "lastName": lastName.text!,
             "email": email,
             "phoneNumber": phoneNumber.text!
         ]){ err in

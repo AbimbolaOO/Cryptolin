@@ -352,6 +352,7 @@
                     </view>
                     <connections>
                         <outlet property="labelViewBox" destination="f3y-o8-gZb" id="E1v-Z6-Fwk"/>
+                        <outlet property="userName" destination="095-vJ-ntE" id="BKc-it-5BE"/>
                         <outlet property="userPicture" destination="0lX-vA-U6r" id="NCo-n4-fBZ"/>
                     </connections>
                 </viewController>
@@ -1595,9 +1596,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="buttonView" destination="MoI-m3-t42" id="5Xp-8s-gwx"/>
                         <outlet property="changeImageBtn" destination="npD-BG-qIo" id="RJ5-Qf-cB2"/>
+                        <outlet property="email" destination="xh1-Kj-5xP" id="L7j-hp-lso"/>
+                        <outlet property="firstName" destination="nHe-NJ-VCp" id="arp-I7-yCQ"/>
+                        <outlet property="lastName" destination="5Mi-oH-tQI" id="38i-aU-L4q"/>
+                        <outlet property="phoneNumber" destination="pEE-lg-y7K" id="eOa-rG-eF3"/>
                         <outlet property="profileImage" destination="efc-79-ZIc" id="Q5U-aH-6YU"/>
+                        <outlet property="saveChangesBtn" destination="MoI-m3-t42" id="5Xp-8s-gwx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KxL-zb-teb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

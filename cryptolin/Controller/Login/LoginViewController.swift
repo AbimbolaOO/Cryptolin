@@ -15,6 +15,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         case password
     }
     
+    var db: Firestore!
+    
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
@@ -31,6 +33,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        db = Firestore.firestore()
         
         loginBtn.layer.cornerRadius = 4
         containerView.layer.cornerRadius = 8
@@ -78,7 +81,43 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 navigationController?.popToRootViewController(animated: true)
                 UserDefaults.standard.set(true, forKey: "LoggedIn")
                 UserDefaults.standard.synchronize()
+                
+                getUserDataFromServer(email: authResult?.user.email ?? " ")
+                
             }
+        }
+    }
+    
+    private func getUserDataFromServer(email: String){
+        let docRef = db.collection("users").document(email)
+        
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let user = document.data()
+                self.setupUserInCoreData(firstName: user!["firstName"] as! String , lastName: user!["lastName"] as! String, email: user!["email"] as! String, phoneNumber: user!["phoneNumber"] as! String, imageUrl: user!["imageUrl"] as? String)
+                print(document.data() ?? "")
+            } else {
+                print("Document does not exist")
+            }
+        }
+        
+    }
+    
+    private func setupUserInCoreData(firstName: String, lastName: String, email: String, phoneNumber: String, imageUrl: String?){
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let userData = UserData(context: context)
+        userData.firstName = firstName
+        userData.lastName = lastName
+        userData.email = email
+        userData.phoneNumber = phoneNumber
+        if let imageUrl = imageUrl{
+            userData.imageUrl = URL(string: imageUrl)
+        }
+        do {
+            try context.save()
+            print("Data created in core data")
+        }catch{
+            print("Couldn't save data in coredata: \(error)")
         }
     }
     
