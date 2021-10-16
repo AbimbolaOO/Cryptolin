@@ -9,6 +9,8 @@ import UIKit
 
 class OnBoardingSection2CollectionViewCell: UICollectionViewCell {
     
+    weak var delegate: OnBoardingViewController?
+    var currentPage = 0
     static let reuseIdentifier = String(describing: OnBoardingSection2CollectionViewCell.self)
 
     @IBOutlet weak var pageControl: UIPageControl!
@@ -18,12 +20,26 @@ class OnBoardingSection2CollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         getStartedBtn.layer.cornerRadius = getStartedBtn.layer.frame.height/2
+        getStartedBtn.addTarget(self, action: #selector(setupText), for: .touchUpInside)
         
         pageControl.preferredIndicatorImage = UIImage(systemName: "minus")
-        let startPage = 0
-        pageControl.setIndicatorImage(UIImage(systemName: "minus.square"), forPage: startPage)
+        pageControl.setIndicatorImage(UIImage(systemName: "minus.square"), forPage: currentPage)
         pageControl.pageIndicatorTintColor = UIColor(white: 0.7, alpha: 1)
         pageControl.currentPageIndicatorTintColor = UIColor(white: 1, alpha: 1)
+    }
+    
+    @objc func setupText(){
+        delegate?.popSignUpScreen(currentPage: currentPage)
+        currentPage = currentPage + 1
+        if currentPage < OnBoardingCollectionViewCellData.list.count{
+            pageControl.currentPage = currentPage
+            pageControl.setIndicatorImage(UIImage(systemName: "minus"), forPage: currentPage - 1)
+            pageControl.setIndicatorImage(UIImage(systemName: "minus.square"), forPage: currentPage)
+            pageControl.currentPageIndicatorTintColor = UIColor(white: 1, alpha: 1)
+        }
+        if currentPage > OnBoardingCollectionViewCellData.list.count - 2{
+            getStartedBtn.setTitle("Sign up", for: .normal)
+        }
     }
     
 }

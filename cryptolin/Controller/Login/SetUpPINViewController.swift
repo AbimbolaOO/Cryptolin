@@ -8,6 +8,8 @@
 import UIKit
 
 class SetUpPINViewController: UIViewController {
+    
+    static let storyboardId = String(describing: SetUpPINViewController.self)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,13 +19,17 @@ class SetUpPINViewController: UIViewController {
         
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         super.viewWillDisappear(animated)
     }
     
     @IBAction func createPinBtn(_ sender: Any) {
-        navigationController?.pushViewController(BaseTabBarController(), animated: true)
+        guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else {
+            fatalError("could not get scene delegate ")
+        }
+        sceneDelegate.window?.rootViewController = BaseTabBarController()
+        navigationController?.popToRootViewController(animated: true)
     }
 
 }

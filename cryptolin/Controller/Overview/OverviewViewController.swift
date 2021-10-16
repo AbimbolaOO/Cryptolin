@@ -11,7 +11,13 @@ import SideMenu
 class OverviewViewController: UICollectionViewController {
     
     var menu: SideMenuNavigationController!
-   
+    
+    lazy var topView: UIView = {
+        let topView = UIView(frame: CGRect(x: 0, y: -collectionView!.bounds.height,
+        width: collectionView!.bounds.width, height: collectionView!.bounds.height))
+        topView.backgroundColor = .systemBlue
+        return topView
+    }()
     
     init(){
         
@@ -45,7 +51,6 @@ class OverviewViewController: UICollectionViewController {
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
                 item.contentInsets = .init(top: 10, leading: 10, bottom: 10, trailing: 10)
                 let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.15)), subitems: [item])
-//                group.contentInsets = .init(top: 8, leading: 10, bottom: 8, trailing: 10)
                 
                 let section = NSCollectionLayoutSection(group: group)
                 
@@ -75,6 +80,8 @@ class OverviewViewController: UICollectionViewController {
         super.viewDidLoad()
         
         Utils.setupMenuViewController(MenuViewController.self, withIndentifier: MenuViewController.reuseIdentifier, menu: &menu, viewForGesture: view)
+        
+        collectionView!.addSubview(topView)
         
         navigationItem.titleView = NavbarTilteView()
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal"), style: .plain, target: self, action: #selector(showMenu))

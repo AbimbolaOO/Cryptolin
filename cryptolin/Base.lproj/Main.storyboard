@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sjc-pW-zpN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uq3-HC-Qmr">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -352,6 +352,8 @@
                     </view>
                     <connections>
                         <outlet property="labelViewBox" destination="f3y-o8-gZb" id="E1v-Z6-Fwk"/>
+                        <outlet property="userName" destination="095-vJ-ntE" id="BKc-it-5BE"/>
+                        <outlet property="userPicture" destination="0lX-vA-U6r" id="NCo-n4-fBZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ly4-mw-0WT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -427,7 +429,7 @@
                                                                                 <rect key="frame" x="0.0" y="21" width="169" height="23"/>
                                                                                 <color key="textColor" red="0.13333332540000001" green="0.13333332540000001" blue="0.13333332540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="name"/>
+                                                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next" textContentType="name"/>
                                                                                 <connections>
                                                                                     <action selector="checkTextFieldValidity:" destination="rfh-rV-HpV" eventType="editingChanged" id="AfX-Do-YHM"/>
                                                                                 </connections>
@@ -460,7 +462,7 @@
                                                                                 <rect key="frame" x="0.0" y="21" width="169" height="23"/>
                                                                                 <color key="textColor" red="0.13333332540000001" green="0.13333332540000001" blue="0.13333332540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="family-name"/>
+                                                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next" textContentType="family-name"/>
                                                                                 <connections>
                                                                                     <action selector="checkTextFieldValidity:" destination="rfh-rV-HpV" eventType="editingChanged" id="SjL-le-o4w"/>
                                                                                 </connections>
@@ -495,7 +497,7 @@
                                                                         <rect key="frame" x="0.0" y="21" width="354" height="23"/>
                                                                         <color key="textColor" red="0.13333332540000001" green="0.13333332540000001" blue="0.13333332540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                                                                         <connections>
                                                                             <action selector="checkTextFieldValidity:" destination="rfh-rV-HpV" eventType="editingChanged" id="SJh-YP-qIP"/>
                                                                         </connections>
@@ -561,7 +563,7 @@
                                                                         <rect key="frame" x="0.0" y="21" width="354" height="23"/>
                                                                         <color key="textColor" red="0.13333332540000001" green="0.13333332540000001" blue="0.13333332540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                                        <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="next" textContentType="password"/>
+                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" returnKeyType="next" textContentType="password"/>
                                                                         <connections>
                                                                             <action selector="checkTextFieldValidity:" destination="rfh-rV-HpV" eventType="editingChanged" id="WEv-lO-k82"/>
                                                                         </connections>
@@ -594,7 +596,7 @@
                                                                         <rect key="frame" x="0.0" y="21" width="354" height="23"/>
                                                                         <color key="textColor" red="0.13333332540000001" green="0.13333332540000001" blue="0.13333332540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                                        <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="go" textContentType="username"/>
+                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" returnKeyType="go" textContentType="username"/>
                                                                         <connections>
                                                                             <action selector="checkTextFieldValidity:" destination="rfh-rV-HpV" eventType="editingChanged" id="p3w-ay-YkY"/>
                                                                         </connections>
@@ -1093,7 +1095,7 @@
         <!--Login View Controller-->
         <scene sceneID="Prz-2J-zXB">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="kZW-LN-iWs" customClass="LoginViewController" customModule="cryptolin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" hidesBottomBarWhenPushed="YES" id="kZW-LN-iWs" customClass="LoginViewController" customModule="cryptolin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="twt-wD-SGE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1145,7 +1147,7 @@
                                                                 <rect key="frame" x="0.0" y="21" width="334" height="23"/>
                                                                 <color key="textColor" red="0.13333332540000001" green="0.13333332540000001" blue="0.13333332540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                                                 <connections>
                                                                     <action selector="checkTextFieldValidity:" destination="kZW-LN-iWs" eventType="editingChanged" id="t23-xi-uVs"/>
                                                                 </connections>
@@ -1204,9 +1206,6 @@
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Sign up to your account"/>
-                                                        <connections>
-                                                            <action selector="loginToAccoutBtn:" destination="kZW-LN-iWs" eventType="touchUpInside" id="UrY-Ay-eDc"/>
-                                                        </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="laf-E0-W4K">
                                                         <rect key="frame" x="0.0" y="235" width="334" height="17"/>
@@ -1418,6 +1417,9 @@
                                         <rect key="frame" x="19" y="150" width="162.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Change Profile Image"/>
+                                        <connections>
+                                            <action selector="triggerChangePImg:" destination="z5h-fg-Bdr" eventType="touchUpInside" id="JMY-Mc-TMd"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -1594,7 +1596,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="buttonView" destination="MoI-m3-t42" id="5Xp-8s-gwx"/>
+                        <outlet property="changeImageBtn" destination="npD-BG-qIo" id="RJ5-Qf-cB2"/>
+                        <outlet property="email" destination="xh1-Kj-5xP" id="L7j-hp-lso"/>
+                        <outlet property="firstName" destination="nHe-NJ-VCp" id="arp-I7-yCQ"/>
+                        <outlet property="lastName" destination="5Mi-oH-tQI" id="38i-aU-L4q"/>
+                        <outlet property="phoneNumber" destination="pEE-lg-y7K" id="eOa-rG-eF3"/>
+                        <outlet property="profileImage" destination="efc-79-ZIc" id="Q5U-aH-6YU"/>
+                        <outlet property="saveChangesBtn" destination="MoI-m3-t42" id="5Xp-8s-gwx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KxL-zb-teb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2199,25 +2207,10 @@
             </objects>
             <point key="canvasLocation" x="-797" y="122"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="38q-fn-qab">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sjc-pW-zpN" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HNy-9g-t2r">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="L0Q-Uc-53b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2506" y="2555"/>
-        </scene>
-        <!--View Controller-->
+        <!--Biometric View Controller-->
         <scene sceneID="8FX-qR-j7a">
             <objects>
-                <viewController id="5n2-Qz-2QV" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BiometricViewController" id="5n2-Qz-2QV" customClass="BiometricViewController" customModule="cryptolin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gA0-zS-QM9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -10,9 +10,6 @@ import UIKit
 class OnBoardingViewController: UICollectionViewController{
     
     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-    var currentPage = 0
-    
-    let ImgArr = [1, 2, 4, 4]
     
     init(){
         
@@ -100,30 +97,20 @@ class OnBoardingViewController: UICollectionViewController{
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnBoardingSection2CollectionViewCell.reuseIdentifier, for: indexPath) as? OnBoardingSection2CollectionViewCell else{
                 fatalError("couldn't create cell")
             }
-            cell.getStartedBtn.addTarget(self, action: #selector(popSignUpScreen), for: .touchUpInside)
+            cell.delegate = self
             return cell
         }
-        
     }
     
-    
-    @objc func popSignUpScreen(){
-        
-        if currentPage < ImgArr.count {
+    func popSignUpScreen(currentPage: Int){
+        if currentPage < OnBoardingCollectionViewCellData.list.count - 1 {
             let indexPath = IndexPath(item: currentPage + 1, section: 0)
-            currentPage = currentPage + 1
             collectionView.scrollToItem(at: indexPath, at: .right, animated: true)
-        }
-        
-        if currentPage == 4{
+        }else{
             let signUpViewController = storyBoard.instantiateViewController(withIdentifier: SignUpViewController.storyboardId) as! SignUpViewController
             navigationController?.pushViewController(signUpViewController, animated: true)
         }
-        
     }
-    
-    
-    
 }
 
 

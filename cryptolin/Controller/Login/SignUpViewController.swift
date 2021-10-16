@@ -19,6 +19,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         case confirmPassord
     }
     
+    var db: Firestore!
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     static let storyboardId = String(describing: SignUpViewController.self)
     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
     
@@ -53,6 +57,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        db = Firestore.firestore()
+        
         signUpBtn.isEnabled = false
         
         firstName.delegate = self
@@ -81,19 +87,53 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         
         smallContentView.layer.cornerRadius = 8
         
-        signUpBtn.addTarget(self, action: #selector(authenticateForm), for: .touchUpInside)
+        signUpBtn.addTarget(self, action: #selector(signUpForAcct), for: .touchUpInside)
     }
     
-    @objc func authenticateForm(){
-        print("welcome to the club")
+    @objc func signUpForAcct(){
+        activityIndicatorView.isHidden = false
         Auth.auth().createUser(withEmail: email.text!, password: password.text!) { [self] authResult, error in
             guard let user = authResult?.user, error == nil else {
                 fatalError("coudn't create user on firebase")
             }
             print("\(user.email!) created")
-            if user.email == self.email.text{
-                let oTPViewController = storyBoard.instantiateViewController(withIdentifier: OTPViewController.storyboardId) as! OTPViewController
-                navigationController?.pushViewController(oTPViewController, animated: true)
+            if user.email == String.lowercased(self.email.text!)(){
+                setupNewUserInDataBase(email: email.text!)
+                setupNewUserInCoreData()
+                let vc = storyBoard.instantiateViewController(withIdentifier: SetUpPINViewController.storyboardId) as! SetUpPINViewController
+                activityIndicatorView.isHidden = true
+                navigationController?.pushViewController(vc, animated: true)
+                UserDefaults.standard.set(true, forKey: "LoggedIn")
+                UserDefaults.standard.synchronize()
+            }
+        }
+    }
+    
+    private func setupNewUserInCoreData(){
+        let userData = UserData(context: self.context)
+        userData.firstName = firstName.text!
+        userData.lastName = lastName.text!
+        userData.email = email.text!
+        userData.phoneNumber = phoneNumber.text!
+        do {
+            try self.context.save()
+            print("Data created in core data")
+        }catch{
+            print("Couldn't save data in coredata: \(error)")
+        }
+    }
+    
+    private func setupNewUserInDataBase(email: String){
+        db.collection("users").document(email).setData([
+            "firstName": firstName.text!,
+            "lastName": lastName.text!,
+            "email": email,
+            "phoneNumber": phoneNumber.text!
+        ]){ err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
             }
         }
     }
@@ -115,21 +155,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         navigationController?.pushViewController(loginViewController, animated: true)
         
     }
-    
-//    var confirmEmailAddress: String!
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        activityIndicatorView.isHidden = false
-//        if segue.identifier == "signUpBtnToOtpSegue"{
-//            Auth.auth().createUser(withEmail: email.text!, password: password.text!) { authResult, error in
-//                guard let user = authResult?.user, error == nil else {
-//                    fatalError("coudn't create user on firebase")
-//                }
-//                self.confirmEmailAddress = user.email
-//                print("\(user.email!) created")
-//            }
-//        }
-//    }
     
     
     @IBAction func checkTextFieldValidity(_ sender: UITextField) {
@@ -230,6 +255,18 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
             textField.resignFirstResponder()
         }
         
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool{
+        let maxLength = 11
+        if textField.tag == 3{
+            let currentString: NSString = textField.text! as NSString
+            let newString: NSString = currentString.replacingCharacters(in: range, with:string) as NSString
+            let invalidCharacters = CharacterSet(charactersIn: "0123456789").inverted
+            return newString.length <= maxLength && string.rangeOfCharacter(from: invalidCharacters) == nil
+        }
         return true
     }
     
