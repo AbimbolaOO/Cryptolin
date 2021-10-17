@@ -16,19 +16,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        if let windowScene = scene as? UIWindowScene {
-            let window = UIWindow(windowScene: windowScene)
-            if UserDefaults.standard.bool(forKey: "LoggedIn"){
-                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                let sb = storyBoard.instantiateViewController(withIdentifier: BiometricViewController.storyboardId) as! BiometricViewController
-                window.rootViewController = Utils.createViewInNavbar(viewController: sb)
-            }else{
-//                window.rootViewController = BaseTabBarController() // Place your root view controller here
-                window.rootViewController = Utils.createViewInNavbar(viewController: OnBoardingViewController())
-            }
-            self.window = window
-            window.makeKeyAndVisible()
-        }
+//        if let windowScene = scene as? UIWindowScene {
+//            let window = UIWindow(windowScene: windowScene)
+//            if UserDefaults.standard.bool(forKey: "LoggedIn"){
+//                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+//                let sb = storyBoard.instantiateViewController(withIdentifier: BiometricViewController.storyboardId) as! BiometricViewController
+//                window.rootViewController = Utils.createViewInNavbar(viewController: sb)
+//            }else{
+////                window.rootViewController = BaseTabBarController() // Place your root view controller here
+//                window.rootViewController = Utils.createViewInNavbar(viewController: OnBoardingViewController())
+//            }
+//            self.window = window
+//            window.makeKeyAndVisible()
+//        }
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

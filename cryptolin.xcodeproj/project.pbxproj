@@ -17,6 +17,8 @@
 		5F6D81BD271703F000A74652 /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 5F6D81BC271703F000A74652 /* FirebaseStorageSwift-Beta */; };
 		5F6D81BF2718AE7D00A74652 /* BiometricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6D81BE2718AE7C00A74652 /* BiometricViewController.swift */; };
 		5F81A83F271B093600CBCB93 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5F81A83E271B093600CBCB93 /* Kingfisher */; };
+		5F81A841271B683F00CBCB93 /* WalletViewCellTapedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F81A840271B683F00CBCB93 /* WalletViewCellTapedViewController.swift */; };
+		5F81A843271B72E100CBCB93 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F81A842271B72E100CBCB93 /* CustomSegmentedControl.swift */; };
 		5F8FDEB9270B801F0071087B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8FDEB8270B801F0071087B /* MenuViewController.swift */; };
 		5F8FDEBC270C74370071087B /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 5F8FDEBB270C74370071087B /* SideMenu */; };
 		5F8FDEBF270CC8B90071087B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8FDEBE270CC8B90071087B /* Utils.swift */; };
@@ -37,7 +39,6 @@
 		5F9476D22706722800654F63 /* WalletHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9476D12706722800654F63 /* WalletHeaderCollectionViewCell.swift */; };
 		5FA4E8C52703441100F17F3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA4E8C42703441100F17F3D /* AppDelegate.swift */; };
 		5FA4E8C72703441100F17F3D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA4E8C62703441100F17F3D /* SceneDelegate.swift */; };
-		5FA4E8C92703441100F17F3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA4E8C82703441100F17F3D /* ViewController.swift */; };
 		5FA4E8CC2703441100F17F3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4E8CA2703441100F17F3D /* Main.storyboard */; };
 		5FA4E8CE2703441400F17F3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4E8CD2703441400F17F3D /* Assets.xcassets */; };
 		5FA4E8D12703441400F17F3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4E8CF2703441400F17F3D /* LaunchScreen.storyboard */; };
@@ -71,6 +72,8 @@
 		5F0E52842713518300D982D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5F36843C2711EF0B00E15D70 /* TextFieldValidators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidators.swift; sourceTree = "<group>"; };
 		5F6D81BE2718AE7C00A74652 /* BiometricViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricViewController.swift; sourceTree = "<group>"; };
+		5F81A840271B683F00CBCB93 /* WalletViewCellTapedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewCellTapedViewController.swift; sourceTree = "<group>"; };
+		5F81A842271B72E100CBCB93 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		5F8FDEB8270B801F0071087B /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		5F8FDEBE270CC8B90071087B /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		5F8FDEC1270DCBB20071087B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +94,6 @@
 		5FA4E8C12703441100F17F3D /* cryptolin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cryptolin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FA4E8C42703441100F17F3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FA4E8C62703441100F17F3D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5FA4E8C82703441100F17F3D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5FA4E8CB2703441100F17F3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5FA4E8CD2703441400F17F3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5FA4E8D02703441400F17F3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -197,7 +199,6 @@
 				5FA4E8D827034EE500F17F3D /* Controller */,
 				5FA4E8C42703441100F17F3D /* AppDelegate.swift */,
 				5FA4E8C62703441100F17F3D /* SceneDelegate.swift */,
-				5FA4E8C82703441100F17F3D /* ViewController.swift */,
 				5FA4E8CA2703441100F17F3D /* Main.storyboard */,
 				5FA4E8CD2703441400F17F3D /* Assets.xcassets */,
 				5FA4E8CF2703441400F17F3D /* LaunchScreen.storyboard */,
@@ -231,6 +232,7 @@
 				5FA4E8ED2703A43C00F17F3D /* Settings */,
 				5FF0E342270690FF004061E0 /* Overview */,
 				5FA4E8EB270396EB00F17F3D /* NavbarTilteView.swift */,
+				5F81A842271B72E100CBCB93 /* CustomSegmentedControl.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -255,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				5F9476BA2704D82500654F63 /* WalletViewController.swift */,
+				5F81A840271B683F00CBCB93 /* WalletViewCellTapedViewController.swift */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -428,12 +431,13 @@
 			files = (
 				5FF0E34F270697BC004061E0 /* Section2CollectionViewCell.swift in Sources */,
 				5FF0E34927069438004061E0 /* Section1CollectionViewCell.swift in Sources */,
+				5F81A841271B683F00CBCB93 /* WalletViewCellTapedViewController.swift in Sources */,
 				5FA4E8E12703500A00F17F3D /* BaseTabBarController.swift in Sources */,
 				5F8FDEBF270CC8B90071087B /* Utils.swift in Sources */,
 				5F36843D2711EF0B00E15D70 /* TextFieldValidators.swift in Sources */,
 				5F6D81BF2718AE7D00A74652 /* BiometricViewController.swift in Sources */,
-				5FA4E8C92703441100F17F3D /* ViewController.swift in Sources */,
 				5FA4E8EA2703718700F17F3D /* SettingTableViewCellData.swift in Sources */,
+				5F81A843271B72E100CBCB93 /* CustomSegmentedControl.swift in Sources */,
 				5FB428102710BDDB0039F10B /* OTPViewController.swift in Sources */,
 				5FB42809270F82B80039F10B /* OnBoardingSection1CollectionViewCell.swift in Sources */,
 				5FB4280D270F82FA0039F10B /* OnBoardingSection2CollectionViewCell.swift in Sources */,
