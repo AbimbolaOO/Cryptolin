@@ -19,6 +19,7 @@
 		5F81A83F271B093600CBCB93 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5F81A83E271B093600CBCB93 /* Kingfisher */; };
 		5F81A841271B683F00CBCB93 /* WalletViewCellTapedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F81A840271B683F00CBCB93 /* WalletViewCellTapedViewController.swift */; };
 		5F81A843271B72E100CBCB93 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F81A842271B72E100CBCB93 /* CustomSegmentedControl.swift */; };
+		5F81A845271CA79C00CBCB93 /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F81A844271CA79C00CBCB93 /* EmptyViewController.swift */; };
 		5F8FDEB9270B801F0071087B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8FDEB8270B801F0071087B /* MenuViewController.swift */; };
 		5F8FDEBC270C74370071087B /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 5F8FDEBB270C74370071087B /* SideMenu */; };
 		5F8FDEBF270CC8B90071087B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8FDEBE270CC8B90071087B /* Utils.swift */; };
@@ -74,6 +75,7 @@
 		5F6D81BE2718AE7C00A74652 /* BiometricViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricViewController.swift; sourceTree = "<group>"; };
 		5F81A840271B683F00CBCB93 /* WalletViewCellTapedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewCellTapedViewController.swift; sourceTree = "<group>"; };
 		5F81A842271B72E100CBCB93 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
+		5F81A844271CA79C00CBCB93 /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
 		5F8FDEB8270B801F0071087B /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		5F8FDEBE270CC8B90071087B /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		5F8FDEC1270DCBB20071087B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				5FF0E342270690FF004061E0 /* Overview */,
 				5FA4E8EB270396EB00F17F3D /* NavbarTilteView.swift */,
 				5F81A842271B72E100CBCB93 /* CustomSegmentedControl.swift */,
+				5F81A844271CA79C00CBCB93 /* EmptyViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				5FB428122710C5CC0039F10B /* SetUpPINViewController.swift in Sources */,
 				5FA4E8C72703441100F17F3D /* SceneDelegate.swift in Sources */,
 				5F9476AF2704926F00654F63 /* AccountsViewController.swift in Sources */,
+				5F81A845271CA79C00CBCB93 /* EmptyViewController.swift in Sources */,
 				5F9476B72704C7E600654F63 /* ReferralsViewController.swift in Sources */,
 				5FB428142710C6630039F10B /* LoginViewController.swift in Sources */,
 				5F9476C12706352C00654F63 /* WalletCollectionViewCell.swift in Sources */,

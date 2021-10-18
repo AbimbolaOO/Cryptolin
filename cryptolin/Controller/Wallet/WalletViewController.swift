@@ -11,6 +11,7 @@ import SideMenu
 class WalletViewController: UICollectionViewController{
     
     var menu: SideMenuNavigationController!
+    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
     
     init(){
         let layout = UICollectionViewCompositionalLayout{(sectionNumber, _) -> NSCollectionLayoutSection? in
@@ -81,6 +82,13 @@ class WalletViewController: UICollectionViewController{
             fatalError("Couldn't create view")
         }
         return headerView
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.item)
+        if let vc = storyBoard.instantiateViewController(withIdentifier: WalletViewCellTapedViewController.storyboardId) as? WalletViewCellTapedViewController{
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
 }
