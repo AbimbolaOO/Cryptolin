@@ -24,8 +24,8 @@ class WalletViewCellTapedViewController: UIViewController {
     }()
     
     lazy var AddressView: UIViewController = {
-        let vc = UIViewController()
-        vc.view.backgroundColor = .red
+        let vc = AddressesCollectionViewController()
+//        vc.view.backgroundColor = .red
         return vc
     }()
     
@@ -38,6 +38,8 @@ class WalletViewCellTapedViewController: UIViewController {
         
         addViewControllerAsChildVC(childVC: EmptyTranscationsView)
         addViewControllerAsChildVC(childVC: AddressView)
+        
+        setUpView(vc: AddressView)
     }
     
     private func addViewControllerAsChildVC(childVC: UIViewController){
