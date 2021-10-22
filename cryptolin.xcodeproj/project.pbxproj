@@ -10,6 +10,7 @@
 		5F02489B2719C6FC00A85C9A /* cryptolin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F0248992719C6FC00A85C9A /* cryptolin.xcdatamodeld */; };
 		5F0E52852713518300D982D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F0E52842713518300D982D5 /* GoogleService-Info.plist */; };
 		5F36843D2711EF0B00E15D70 /* TextFieldValidators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F36843C2711EF0B00E15D70 /* TextFieldValidators.swift */; };
+		5F6989792723081B0051F75E /* DeleteAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6989782723081B0051F75E /* DeleteAddressViewController.swift */; };
 		5F6D81B5271703F000A74652 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5F6D81B4271703F000A74652 /* FirebaseAuth */; };
 		5F6D81B7271703F000A74652 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5F6D81B6271703F000A74652 /* FirebaseFirestore */; };
 		5F6D81B9271703F000A74652 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 5F6D81B8271703F000A74652 /* FirebaseFirestoreSwift-Beta */; };
@@ -77,6 +78,7 @@
 		5F02489A2719C6FC00A85C9A /* cryptolin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = cryptolin.xcdatamodel; sourceTree = "<group>"; };
 		5F0E52842713518300D982D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5F36843C2711EF0B00E15D70 /* TextFieldValidators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidators.swift; sourceTree = "<group>"; };
+		5F6989782723081B0051F75E /* DeleteAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAddressViewController.swift; sourceTree = "<group>"; };
 		5F6D81BE2718AE7C00A74652 /* BiometricViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricViewController.swift; sourceTree = "<group>"; };
 		5F81A840271B683F00CBCB93 /* WalletViewCellTapedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewCellTapedViewController.swift; sourceTree = "<group>"; };
 		5F81A842271B72E100CBCB93 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				5F81A847271E0CE200CBCB93 /* AddressesCollectionViewController.swift */,
+				5F6989782723081B0051F75E /* DeleteAddressViewController.swift */,
 			);
 			path = Address;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				5FB428122710C5CC0039F10B /* SetUpPINViewController.swift in Sources */,
 				5F81A8572721F34000CBCB93 /* CryptoAddressData.swift in Sources */,
 				5FA4E8C72703441100F17F3D /* SceneDelegate.swift in Sources */,
+				5F6989792723081B0051F75E /* DeleteAddressViewController.swift in Sources */,
 				5F9476AF2704926F00654F63 /* AccountsViewController.swift in Sources */,
 				5F81A845271CA79C00CBCB93 /* EmptyViewController.swift in Sources */,
 				5F9476B72704C7E600654F63 /* ReferralsViewController.swift in Sources */,

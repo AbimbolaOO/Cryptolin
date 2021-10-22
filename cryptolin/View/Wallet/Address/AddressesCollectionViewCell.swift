@@ -9,6 +9,7 @@ import UIKit
 
 class AddressesCollectionViewCell: UICollectionViewCell {
     
+    var delegate: AddressesCollectionViewController!
     static let reuseIdentifier = String(describing: AddressesCollectionViewCell.self)
     
     var cryptoAddressData: CryptoAddressData! {
@@ -23,11 +24,17 @@ class AddressesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var totalRecieved: UILabel!
     @IBOutlet weak var createdAt: UILabel!
     @IBOutlet weak var cryptoAddress: UILabel!
+    @IBOutlet weak var deleteCellBtn: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         containerView.layer.borderWidth = 0.5
         containerView.layer.borderColor = UIColor.lightGray.cgColor
     }
-
+    
+    @IBAction func removeCryptoAdressBtn(_ sender: UIButton) {
+        print(sender.tag)
+        self.delegate.alertToRemoveAddressCell()
+    }
+    
 }
