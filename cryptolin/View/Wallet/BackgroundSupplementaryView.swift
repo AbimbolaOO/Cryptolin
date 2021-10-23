@@ -14,6 +14,7 @@ class BackgroundSupplementaryView: UICollectionReusableView {
         
         layer.cornerRadius = 8
         layer.borderWidth = 1
+        layer.masksToBounds = true
         layer.borderColor = UIColor.lightGray.cgColor
     }
     

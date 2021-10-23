@@ -28,9 +28,6 @@ class SettingsTableViewCell: UITableViewCell {
         
         accessoryType = .disclosureIndicator
         clipsToBounds = true
-        layer.cornerRadius = 4
-        layer.borderWidth = 0.5
-        layer.borderColor = UIColor.lightGray.cgColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
