@@ -6,19 +6,25 @@
 //
 
 import UIKit
+import CoreMedia
 
 class AddressesCollectionViewController: UICollectionViewController, DeleteCryptoAddressProtocol {
     
     enum Section{
         case main
     }
-    
+    var indexTracker: Int!
     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
     
     private var allCryptoAddressInfoList = CryptoAddressData.allCryptoAddressInfo
     private lazy var dataSource = makeDataSource()
     typealias DataSource = UICollectionViewDiffableDataSource<Section, CryptoAddressData>
     typealias Snapshot = NSDiffableDataSourceSnapshot<Section, CryptoAddressData>
+    
+    lazy var setIndextrackerCallback = { [self] (currentCell: UICollectionViewCell) in
+        indexTracker = collectionView.indexPath(for: currentCell)![1]
+        print("button pressed", indexTracker!)
+    }
     
     init(){
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
@@ -74,6 +80,7 @@ class AddressesCollectionViewController: UICollectionViewController, DeleteCrypt
                 withReuseIdentifier: AddressesCollectionViewCell.reuseIdentifier,
                 for: indexPath) as? AddressesCollectionViewCell
             cell?.cryptoAddressData = cryptoAddressData
+            cell?.callback = self.setIndextrackerCallback
             cell?.delegate = self
             return cell
         })
@@ -92,8 +99,7 @@ class AddressesCollectionViewController: UICollectionViewController, DeleteCrypt
         return dataSource
     }
     
-    func alertToRemoveAddressCell(){
-        print("Cell has been removed OK!!")
+    func alertViewToRemoveAddressCell(){
         let vc = storyBoard.instantiateViewController(withIdentifier: DeleteAddressViewController.storyboardId) as! DeleteAddressViewController
         vc.delegate = self
         vc.modalPresentationStyle = .overCurrentContext
@@ -103,6 +109,10 @@ class AddressesCollectionViewController: UICollectionViewController, DeleteCrypt
     
     func removeCryptoAddress(){
         print("Finally removing address")
+        var snapshot = dataSource.snapshot()
+        let identfiers = snapshot.itemIdentifiers(inSection: .main)
+        snapshot.deleteItems([identfiers[indexTracker]])
+        dataSource.apply(snapshot, animatingDifferences: true)
         self.dismiss(animated: true, completion: nil)
     }
     

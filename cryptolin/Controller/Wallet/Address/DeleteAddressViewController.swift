@@ -7,7 +7,7 @@
 
 import UIKit
 
-@objc protocol DeleteCryptoAddressProtocol: AnyObject{
+protocol DeleteCryptoAddressProtocol: AnyObject{
     func removeCryptoAddress()
 }
 
@@ -15,7 +15,7 @@ class DeleteAddressViewController: UIViewController {
     
     static let storyboardId = String(describing: DeleteAddressViewController.self)
     
-    var delegate:DeleteCryptoAddressProtocol!
+    weak var delegate: DeleteCryptoAddressProtocol!
     
     @IBOutlet weak var alertView: UIView!
 
@@ -39,7 +39,6 @@ class DeleteAddressViewController: UIViewController {
     }
     
     @IBAction func okBtn(_ sender: Any) {
-        print("Ok btn clicked!!")
         self.delegate.removeCryptoAddress()
     }
 }

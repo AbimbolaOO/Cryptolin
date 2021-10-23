@@ -12,6 +12,8 @@ class AddressesCollectionViewCell: UICollectionViewCell {
     var delegate: AddressesCollectionViewController!
     static let reuseIdentifier = String(describing: AddressesCollectionViewCell.self)
     
+    var callback : ((_ cell: AddressesCollectionViewCell) -> Void)?
+    
     var cryptoAddressData: CryptoAddressData! {
         didSet{
             totalRecieved.text = cryptoAddressData.totalRecieved
@@ -33,8 +35,8 @@ class AddressesCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func removeCryptoAdressBtn(_ sender: UIButton) {
-        print(sender.tag)
-        self.delegate.alertToRemoveAddressCell()
+        callback?(self)
+        self.delegate.alertViewToRemoveAddressCell()
     }
     
 }

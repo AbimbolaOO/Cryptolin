@@ -141,7 +141,6 @@
                 <outlet property="containerView" destination="IzQ-im-F5d" id="P6C-0W-kI3"/>
                 <outlet property="createdAt" destination="Hsw-P7-Zyx" id="Viu-Uf-3Z2"/>
                 <outlet property="cryptoAddress" destination="Njh-5L-lMg" id="fru-f6-7QZ"/>
-                <outlet property="deleteCellBtn" destination="8Xb-3W-asr" id="SaY-nw-6UM"/>
                 <outlet property="totalRecieved" destination="SGz-Gz-y0O" id="px3-4d-zlR"/>
             </connections>
             <point key="canvasLocation" x="274.63768115942031" y="69.977678571428569"/>
