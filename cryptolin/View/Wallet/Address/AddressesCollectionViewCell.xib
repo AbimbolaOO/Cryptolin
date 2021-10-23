@@ -100,6 +100,9 @@
                                                 <color key="backgroundColor" red="0.85516160379999995" green="0.89099489259999998" blue="0.94811395200000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Copy"/>
+                                                <connections>
+                                                    <action selector="copyCrytoAddressBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="3ec-XE-VgQ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRJ-fa-XBV">
                                                 <rect key="frame" x="64" y="0.0" width="43.5" height="31.5"/>
@@ -109,6 +112,9 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="qrcode" catalog="system" title=""/>
+                                                <connections>
+                                                    <action selector="presentQrCodeView:" destination="gTV-IL-0wX" eventType="touchUpInside" id="a4P-q4-9TV"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

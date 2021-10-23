@@ -65,6 +65,7 @@
 		5FB428122710C5CC0039F10B /* SetUpPINViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB428112710C5CC0039F10B /* SetUpPINViewController.swift */; };
 		5FB428142710C6630039F10B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB428132710C6630039F10B /* LoginViewController.swift */; };
 		5FB428162710DFE60039F10B /* OnBoardingCollectionViewCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB428152710DFE60039F10B /* OnBoardingCollectionViewCellData.swift */; };
+		5FE4A78E272492200044E0D0 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE4A78D272492200044E0D0 /* QRCodeViewController.swift */; };
 		5FF0E3442706913F004061E0 /* BackgroundForSectionsInOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF0E3432706913F004061E0 /* BackgroundForSectionsInOverview.swift */; };
 		5FF0E34927069438004061E0 /* Section1CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF0E34727069438004061E0 /* Section1CollectionViewCell.swift */; };
 		5FF0E34A27069438004061E0 /* Section1CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF0E34827069438004061E0 /* Section1CollectionViewCell.xib */; };
@@ -128,6 +129,7 @@
 		5FB428112710C5CC0039F10B /* SetUpPINViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpPINViewController.swift; sourceTree = "<group>"; };
 		5FB428132710C6630039F10B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5FB428152710DFE60039F10B /* OnBoardingCollectionViewCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCollectionViewCellData.swift; sourceTree = "<group>"; };
+		5FE4A78D272492200044E0D0 /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 		5FF0E3432706913F004061E0 /* BackgroundForSectionsInOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundForSectionsInOverview.swift; sourceTree = "<group>"; };
 		5FF0E34727069438004061E0 /* Section1CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section1CollectionViewCell.swift; sourceTree = "<group>"; };
 		5FF0E34827069438004061E0 /* Section1CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Section1CollectionViewCell.xib; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			children = (
 				5F81A847271E0CE200CBCB93 /* AddressesCollectionViewController.swift */,
 				5F6989782723081B0051F75E /* DeleteAddressViewController.swift */,
+				5FE4A78D272492200044E0D0 /* QRCodeViewController.swift */,
 			);
 			path = Address;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				5F81A841271B683F00CBCB93 /* WalletViewCellTapedViewController.swift in Sources */,
 				5FA4E8E12703500A00F17F3D /* BaseTabBarController.swift in Sources */,
 				5F81A84E2720A50900CBCB93 /* AddressesCollectionViewCell.swift in Sources */,
+				5FE4A78E272492200044E0D0 /* QRCodeViewController.swift in Sources */,
 				5F8FDEBF270CC8B90071087B /* Utils.swift in Sources */,
 				5F36843D2711EF0B00E15D70 /* TextFieldValidators.swift in Sources */,
 				5F6D81BF2718AE7D00A74652 /* BiometricViewController.swift in Sources */,

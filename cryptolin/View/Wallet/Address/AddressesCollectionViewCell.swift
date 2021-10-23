@@ -9,10 +9,21 @@ import UIKit
 
 class AddressesCollectionViewCell: UICollectionViewCell {
     
+    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+    
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var totalRecieved: UILabel!
+    @IBOutlet weak var createdAt: UILabel!
+    @IBOutlet weak var cryptoAddress: UILabel!
+    
+    
     var delegate: AddressesCollectionViewController!
+    
     static let reuseIdentifier = String(describing: AddressesCollectionViewCell.self)
     
-    var callback : ((_ cell: AddressesCollectionViewCell) -> Void)?
+    var removeCryptoAdressBtnCallback : ((_ cell: AddressesCollectionViewCell) -> Void)?
+    
+    var presentQRCodeViewCallback : ((_ cell: AddressesCollectionViewCell) -> Void)?
     
     var cryptoAddressData: CryptoAddressData! {
         didSet{
@@ -21,12 +32,6 @@ class AddressesCollectionViewCell: UICollectionViewCell {
             cryptoAddress.text = cryptoAddressData.cryptoAddress
         }
     }
-
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var totalRecieved: UILabel!
-    @IBOutlet weak var createdAt: UILabel!
-    @IBOutlet weak var cryptoAddress: UILabel!
-    @IBOutlet weak var deleteCellBtn: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,8 +40,16 @@ class AddressesCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func removeCryptoAdressBtn(_ sender: UIButton) {
-        callback?(self)
+        removeCryptoAdressBtnCallback?(self)
         self.delegate.alertViewToRemoveAddressCell()
+    }
+    
+    @IBAction func presentQrCodeView(_ sender: UIButton) {
+        presentQRCodeViewCallback?(self)
+    }
+    
+    @IBAction func copyCrytoAddressBtn(_ sender: UIButton) {
+        UIPasteboard.general.string = cryptoAddress.text
     }
     
 }

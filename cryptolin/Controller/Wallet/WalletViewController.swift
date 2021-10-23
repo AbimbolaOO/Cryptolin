@@ -17,7 +17,7 @@ class WalletViewController: UICollectionViewController{
         let layout = UICollectionViewCompositionalLayout{(sectionNumber, _) -> NSCollectionLayoutSection? in
             
             let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-            let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.25)), subitems: [item])
+            let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(200)), subitems: [item])
             group.contentInsets = .init(top: 8, leading: 10, bottom: 8, trailing: 10)
             
             let section = NSCollectionLayoutSection(group: group)

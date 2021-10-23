@@ -8,7 +8,7 @@
 import UIKit
 import CoreMedia
 
-class AddressesCollectionViewController: UICollectionViewController, DeleteCryptoAddressProtocol {
+class AddressesCollectionViewController: UICollectionViewController, DeleteCryptoAddressProtocol{
     
     enum Section{
         case main
@@ -24,6 +24,12 @@ class AddressesCollectionViewController: UICollectionViewController, DeleteCrypt
     lazy var setIndextrackerCallback = { [self] (currentCell: UICollectionViewCell) in
         indexTracker = collectionView.indexPath(for: currentCell)![1]
         print("button pressed", indexTracker!)
+    }
+    
+    lazy var presentQRCodeViewCallback = {[self] (currentCell: UICollectionViewCell) in
+        if let vc = storyBoard.instantiateViewController(withIdentifier: QRCodeViewController.storyboardId) as? QRCodeViewController{
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     init(){
@@ -80,7 +86,8 @@ class AddressesCollectionViewController: UICollectionViewController, DeleteCrypt
                 withReuseIdentifier: AddressesCollectionViewCell.reuseIdentifier,
                 for: indexPath) as? AddressesCollectionViewCell
             cell?.cryptoAddressData = cryptoAddressData
-            cell?.callback = self.setIndextrackerCallback
+            cell?.removeCryptoAdressBtnCallback = self.setIndextrackerCallback
+            cell?.presentQRCodeViewCallback = self.presentQRCodeViewCallback
             cell?.delegate = self
             return cell
         })
