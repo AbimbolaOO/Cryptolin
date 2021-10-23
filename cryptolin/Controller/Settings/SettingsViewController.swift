@@ -13,7 +13,8 @@ class SettingsViewController: UITabBarController, UITableViewDataSource, UITable
     var menu: SideMenuNavigationController!
     
     let tableViewCellId = SettingsTableViewCell.reUseIdentifier
-    let tableView = UITableView()
+//    let tableView = UITableView()
+    lazy var tableView = UITableView(frame: view.bounds, style: .insetGrouped)
     
     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
     
@@ -25,18 +26,24 @@ class SettingsViewController: UITabBarController, UITableViewDataSource, UITable
         navigationItem.titleView = NavbarTilteView()
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal"), style: .plain, target: self, action: #selector(showMenu))
         
+        configureTableView()
+    }
+    
+    private func configureTableView() {
+        tableView.register(UINib(nibName: tableViewCellId, bundle: nil), forCellReuseIdentifier: tableViewCellId)
+        
         view.addSubview(tableView)
         
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.alwaysBounceVertical = false
-        tableView.separatorStyle = .none
-        tableView.register(UINib(nibName: tableViewCellId, bundle: nil), forCellReuseIdentifier: tableViewCellId)
+        
+        tableView.separatorInset = .zero
         tableView.backgroundColor = UIColor(white: 0.95, alpha: 1)
-        
-        setupTableView()
-        
-    }
+        tableView.showsVerticalScrollIndicator = false
+        tableView.contentInsetAdjustmentBehavior = .automatic
+        tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        tableView.backgroundColor = .systemGroupedBackground
+      }
     
     @objc func showMenu(){
         present(menu, animated: true, completion: nil)
@@ -82,15 +89,4 @@ class SettingsViewController: UITabBarController, UITableViewDataSource, UITable
             navigationController?.pushViewController(board as! UIViewController, animated: true)
         }
     }
-    
-    func setupTableView(){
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
-            tableView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0),
-            tableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0)
-        ])
-    }
-    
 }
