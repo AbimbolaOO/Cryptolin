@@ -17,6 +17,7 @@ class AddressesCollectionViewController: UICollectionViewController, DeleteCrypt
     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
     
     private var allCryptoAddressInfoList = CryptoAddressData.allCryptoAddressInfo
+    
     private lazy var dataSource = makeDataSource()
     typealias DataSource = UICollectionViewDiffableDataSource<Section, CryptoAddressData>
     typealias Snapshot = NSDiffableDataSourceSnapshot<Section, CryptoAddressData>
@@ -27,9 +28,10 @@ class AddressesCollectionViewController: UICollectionViewController, DeleteCrypt
     }
     
     lazy var presentQRCodeViewCallback = {[self] (currentCell: UICollectionViewCell) in
-        if let vc = storyBoard.instantiateViewController(withIdentifier: QRCodeViewController.storyboardId) as? QRCodeViewController{
-            navigationController?.pushViewController(vc, animated: true)
-        }
+        guard let vc = storyBoard.instantiateViewController(withIdentifier: QRCodeViewController.storyboardId) as? QRCodeViewController else { return }
+        let currentCellIndex = collectionView.indexPath(for: currentCell)![1]
+        vc.setUpQRCodeViewData = allCryptoAddressInfoList[currentCellIndex]
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     init(){
@@ -120,6 +122,7 @@ class AddressesCollectionViewController: UICollectionViewController, DeleteCrypt
         let identfiers = snapshot.itemIdentifiers(inSection: .main)
         snapshot.deleteItems([identfiers[indexTracker]])
         dataSource.apply(snapshot, animatingDifferences: true)
+        allCryptoAddressInfoList.remove(at: indexTracker)
         self.dismiss(animated: true, completion: nil)
     }
     

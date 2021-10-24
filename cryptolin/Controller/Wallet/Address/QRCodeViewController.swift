@@ -18,12 +18,22 @@ class QRCodeViewController: UIViewController {
     @IBOutlet weak var qrcodeImageView: UIImageView!
     @IBOutlet weak var cryptoAddress: UILabel!
     
+    var setUpQRCodeViewData: CryptoAddressData!{
+        didSet{
+            cryptoAddressData = setUpQRCodeViewData.cryptoAddress
+        }
+    }
+    
+    var cryptoAddressData = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let backBarButtton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.topItem?.backBarButtonItem = backBarButtton
         navigationItem.title = "Recieve ETH"
+        
+        setUpQRCodeViewControllerData()
         
         setUpView()
         qrcodeImageView.image = generateQRCode(stringToEncode: cryptoAddress.text!)
@@ -50,6 +60,10 @@ class QRCodeViewController: UIViewController {
     
     @IBAction func copyCrytoAddressBtn(_ sender: UIButton) {
         UIPasteboard.general.string = cryptoAddress.text
+    }
+    
+    func setUpQRCodeViewControllerData(){
+        self.cryptoAddress.text = cryptoAddressData
     }
 
 }
