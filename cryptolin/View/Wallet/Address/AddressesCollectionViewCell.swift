@@ -35,8 +35,7 @@ class AddressesCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        containerView.layer.borderWidth = 0.5
-        containerView.layer.borderColor = UIColor.lightGray.cgColor
+        containerView.layer.backgroundColor = UIColor.clear.cgColor
     }
     
     @IBAction func removeCryptoAdressBtn(_ sender: UIButton) {

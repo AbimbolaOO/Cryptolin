@@ -1,23 +1,26 @@
 //
-//  BackgroundForSectionsInOverview.swift
+//  BackgroundSupplementaryView.swift
 //  cryptolin
 //
-//  Created by Olayemi Abimbola on 01/10/2021.
+//  Created by Olayemi Abimbola on 30/09/2021.
 //
 
 import UIKit
 
-class BackgroundForSectionsInOverview: UICollectionReusableView {
+class BackgroundSupplementaryView: UICollectionReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         layer.cornerRadius = 8
         layer.borderWidth = 1
+        layer.masksToBounds = true
         layer.borderColor = UIColor.lightGray.cgColor
+        layer.backgroundColor = UIColor.white.cgColor
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
+

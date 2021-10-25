@@ -47,13 +47,13 @@ class AddressesCollectionViewController: UICollectionViewController, DeleteCrypt
         
         let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
         let backgroundInset: CGFloat = 9.5
-        backgroundItem.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: backgroundInset, bottom: backgroundInset, trailing: backgroundInset)
+        backgroundItem.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: backgroundInset, bottom: backgroundInset, trailing: backgroundInset)
         
         section.decorationItems = [backgroundItem]
-        section.contentInsets = .init(top: 0, leading: 10, bottom: 10, trailing: 10)
+        section.contentInsets = .init(top: 10, leading: 10, bottom: 10, trailing: 10)
         
         let layout = UICollectionViewCompositionalLayout(section: section)
-        layout.register(BackgroundForSectionsInOverview.self, forDecorationViewOfKind: "background")
+        layout.register(BackgroundSupplementaryView.self, forDecorationViewOfKind: "background")
         
         super.init(collectionViewLayout: layout)
         
@@ -65,7 +65,7 @@ class AddressesCollectionViewController: UICollectionViewController, DeleteCrypt
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.backgroundColor = .clear
+        collectionView.backgroundColor = .systemBackground
         collectionView.clipsToBounds = true
         collectionView.showsVerticalScrollIndicator = false
         
@@ -102,7 +102,6 @@ class AddressesCollectionViewController: UICollectionViewController, DeleteCrypt
                 ofKind: kind,
                 withReuseIdentifier: AddressesCollectionViewHeaderCell.reuseIdentifier,
                 for: indexPath) as? AddressesCollectionViewHeaderCell
-            view?.backgroundColor = .init(white: 0.99, alpha: 1)
             return view
         }
         return dataSource

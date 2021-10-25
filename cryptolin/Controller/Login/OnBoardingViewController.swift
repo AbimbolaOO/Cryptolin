@@ -37,7 +37,7 @@ class OnBoardingViewController: UICollectionViewController{
             
         }
         
-        layout.register(BackgroundForSectionsInOverview.self, forDecorationViewOfKind: "background")
+        layout.register(BackgroundSupplementaryView.self, forDecorationViewOfKind: "background")
         
         super.init(collectionViewLayout: layout)
     }

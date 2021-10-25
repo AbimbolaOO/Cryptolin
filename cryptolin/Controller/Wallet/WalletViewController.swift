@@ -51,6 +51,8 @@ class WalletViewController: UICollectionViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.backgroundColor = .systemBackground
+        
         Utils.setupMenuViewController(MenuViewController.self, withIndentifier: MenuViewController.reuseIdentifier, menu: &menu, viewForGesture: view)
         
         navigationItem.titleView = NavbarTilteView()
