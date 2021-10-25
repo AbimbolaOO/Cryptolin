@@ -8,7 +8,7 @@
 import UIKit
 import CoreMedia
 
-class AddressesCollectionViewController: UICollectionViewController, DeleteCryptoAddressProtocol {
+class AddressesCollectionViewController: UICollectionViewController, DeleteCryptoAddressProtocol{
     
     enum Section{
         case main
@@ -17,6 +17,7 @@ class AddressesCollectionViewController: UICollectionViewController, DeleteCrypt
     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
     
     private var allCryptoAddressInfoList = CryptoAddressData.allCryptoAddressInfo
+    
     private lazy var dataSource = makeDataSource()
     typealias DataSource = UICollectionViewDiffableDataSource<Section, CryptoAddressData>
     typealias Snapshot = NSDiffableDataSourceSnapshot<Section, CryptoAddressData>
@@ -24,6 +25,13 @@ class AddressesCollectionViewController: UICollectionViewController, DeleteCrypt
     lazy var setIndextrackerCallback = { [self] (currentCell: UICollectionViewCell) in
         indexTracker = collectionView.indexPath(for: currentCell)![1]
         print("button pressed", indexTracker!)
+    }
+    
+    lazy var presentQRCodeViewCallback = {[self] (currentCell: UICollectionViewCell) in
+        guard let vc = storyBoard.instantiateViewController(withIdentifier: QRCodeViewController.storyboardId) as? QRCodeViewController else { return }
+        let currentCellIndex = collectionView.indexPath(for: currentCell)![1]
+        vc.setUpQRCodeViewData = allCryptoAddressInfoList[currentCellIndex]
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     init(){
@@ -39,13 +47,13 @@ class AddressesCollectionViewController: UICollectionViewController, DeleteCrypt
         
         let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
         let backgroundInset: CGFloat = 9.5
-        backgroundItem.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: backgroundInset, bottom: backgroundInset, trailing: backgroundInset)
+        backgroundItem.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: backgroundInset, bottom: backgroundInset, trailing: backgroundInset)
         
         section.decorationItems = [backgroundItem]
-        section.contentInsets = .init(top: 0, leading: 10, bottom: 10, trailing: 10)
+        section.contentInsets = .init(top: 10, leading: 10, bottom: 10, trailing: 10)
         
         let layout = UICollectionViewCompositionalLayout(section: section)
-        layout.register(BackgroundForSectionsInOverview.self, forDecorationViewOfKind: "background")
+        layout.register(BackgroundSupplementaryView.self, forDecorationViewOfKind: "background")
         
         super.init(collectionViewLayout: layout)
         
@@ -57,7 +65,7 @@ class AddressesCollectionViewController: UICollectionViewController, DeleteCrypt
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.backgroundColor = .clear
+        collectionView.backgroundColor = .systemBackground
         collectionView.clipsToBounds = true
         collectionView.showsVerticalScrollIndicator = false
         
@@ -80,7 +88,8 @@ class AddressesCollectionViewController: UICollectionViewController, DeleteCrypt
                 withReuseIdentifier: AddressesCollectionViewCell.reuseIdentifier,
                 for: indexPath) as? AddressesCollectionViewCell
             cell?.cryptoAddressData = cryptoAddressData
-            cell?.callback = self.setIndextrackerCallback
+            cell?.removeCryptoAdressBtnCallback = self.setIndextrackerCallback
+            cell?.presentQRCodeViewCallback = self.presentQRCodeViewCallback
             cell?.delegate = self
             return cell
         })
@@ -93,7 +102,6 @@ class AddressesCollectionViewController: UICollectionViewController, DeleteCrypt
                 ofKind: kind,
                 withReuseIdentifier: AddressesCollectionViewHeaderCell.reuseIdentifier,
                 for: indexPath) as? AddressesCollectionViewHeaderCell
-            view?.backgroundColor = .init(white: 0.99, alpha: 1)
             return view
         }
         return dataSource
@@ -113,6 +121,7 @@ class AddressesCollectionViewController: UICollectionViewController, DeleteCrypt
         let identfiers = snapshot.itemIdentifiers(inSection: .main)
         snapshot.deleteItems([identfiers[indexTracker]])
         dataSource.apply(snapshot, animatingDifferences: true)
+        allCryptoAddressInfoList.remove(at: indexTracker)
         self.dismiss(animated: true, completion: nil)
     }
     

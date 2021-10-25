@@ -12,6 +12,8 @@ class SavingsViewController: UIViewController {
     
     var menu: SideMenuNavigationController!
     
+    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+    
     static let storyboardId = String(describing: SavingsViewController.self)
 
     @IBOutlet weak var containerView: UIView!
@@ -30,6 +32,7 @@ class SavingsViewController: UIViewController {
         saveTextView.layer.cornerRadius = saveTextView.layer.frame.height/2
         
         getStartedBtn.layer.cornerRadius = 4
+        getStartedBtn.addTarget(self, action: #selector(presentSavingViewController), for: .touchUpInside)
         
         navigationItem.titleView = NavbarTilteView()
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal"), style: .plain, target: self, action: #selector(showMenu))
@@ -37,5 +40,10 @@ class SavingsViewController: UIViewController {
     
     @objc func showMenu(){
         present(menu, animated: true, completion: nil)
+    }
+    
+    @objc func presentSavingViewController(){
+        guard let vc = storyBoard.instantiateViewController(withIdentifier: SelectSavingsOptionsViewController.storyboardId) as? SelectSavingsOptionsViewController else { return }
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

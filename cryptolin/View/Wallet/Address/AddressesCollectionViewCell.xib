@@ -100,6 +100,9 @@
                                                 <color key="backgroundColor" red="0.85516160379999995" green="0.89099489259999998" blue="0.94811395200000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Copy"/>
+                                                <connections>
+                                                    <action selector="copyCrytoAddressBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="3ec-XE-VgQ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRJ-fa-XBV">
                                                 <rect key="frame" x="64" y="0.0" width="43.5" height="31.5"/>
@@ -109,6 +112,9 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="qrcode" catalog="system" title=""/>
+                                                <connections>
+                                                    <action selector="presentQrCodeView:" destination="gTV-IL-0wX" eventType="touchUpInside" id="a4P-q4-9TV"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -118,12 +124,22 @@
                                     <constraint firstAttribute="trailing" secondItem="whW-Wn-x69" secondAttribute="trailing" id="jwM-er-yjT"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbb-ac-xbh">
+                                <rect key="frame" x="0.0" y="0.0" width="509" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="E8d-OY-0Lz"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="A2t-uj-AQ4" firstAttribute="top" secondItem="hbb-ac-xbh" secondAttribute="bottom" constant="19" id="5sw-Uc-fB8"/>
                             <constraint firstAttribute="trailing" secondItem="A2t-uj-AQ4" secondAttribute="trailing" constant="10" id="L8D-LW-8fo"/>
                             <constraint firstAttribute="bottom" secondItem="A2t-uj-AQ4" secondAttribute="bottom" constant="20" id="aCc-Hu-254"/>
+                            <constraint firstItem="hbb-ac-xbh" firstAttribute="leading" secondItem="IzQ-im-F5d" secondAttribute="leading" id="coC-nv-uM3"/>
                             <constraint firstItem="A2t-uj-AQ4" firstAttribute="top" secondItem="IzQ-im-F5d" secondAttribute="top" constant="20" id="u8M-Pc-ZaP"/>
+                            <constraint firstAttribute="trailing" secondItem="hbb-ac-xbh" secondAttribute="trailing" id="wiG-Mo-EMz"/>
                             <constraint firstItem="A2t-uj-AQ4" firstAttribute="leading" secondItem="IzQ-im-F5d" secondAttribute="leading" constant="10" id="xGb-s8-NYu"/>
                         </constraints>
                     </view>
