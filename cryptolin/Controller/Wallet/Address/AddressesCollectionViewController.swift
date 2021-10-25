@@ -95,6 +95,8 @@ class AddressesCollectionViewController: UICollectionViewController, DeleteCrypt
             
             if indexPath.item == self.allCryptoAddressInfoList.count - 1{
                 cell?.rmAddressBtn.isHidden = true
+            }else{
+                cell?.rmAddressBtn.isHidden = false
             }
             
             return cell
@@ -113,6 +115,16 @@ class AddressesCollectionViewController: UICollectionViewController, DeleteCrypt
         }
         return dataSource
     }
+    
+//    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//
+//        if indexPath.item == self.allCryptoAddressInfoList.count - 1{
+//            guard let cell = collectionView.dequeueReusableCell(
+//                withReuseIdentifier: AddressesCollectionViewCell.reuseIdentifier,
+//                for: indexPath) as? AddressesCollectionViewCell else {fatalError("Counldn't cell cell")}
+//            cell.rmAddressBtn.isHidden = true
+//        }
+//    }
     
     func alertViewToRemoveAddressCell(){
         let vc = storyBoard.instantiateViewController(withIdentifier: DeleteAddressViewController.storyboardId) as! DeleteAddressViewController

@@ -11,14 +11,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="AddressesCollectionViewCell" customModule="cryptolin" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="509" height="148"/>
+            <rect key="frame" x="0.0" y="0.0" width="509" height="156"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="509" height="148"/>
+                <rect key="frame" x="0.0" y="0.0" width="509" height="156"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IzQ-im-F5d">
-                        <rect key="frame" x="0.0" y="0.0" width="509" height="148"/>
+                        <rect key="frame" x="0.0" y="0.0" width="509" height="156"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbb-ac-xbh">
                                 <rect key="frame" x="0.0" y="0.0" width="509" height="1"/>
@@ -28,7 +28,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3xp-G7-Qiz">
-                                <rect key="frame" x="8" y="21" width="146.5" height="17"/>
+                                <rect key="frame" x="16" y="21" width="146.5" height="17"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Total Recieved:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8KN-oG-5mC">
                                         <rect key="frame" x="0.0" y="0.0" width="98" height="17"/>
@@ -54,7 +54,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="0yM-se-osc">
-                                <rect key="frame" x="8" y="43" width="133.5" height="17"/>
+                                <rect key="frame" x="16" y="43" width="133.5" height="17"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="Created:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrP-fq-HCl">
                                         <rect key="frame" x="0.0" y="0.0" width="55.5" height="17"/>
@@ -71,13 +71,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="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" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Njh-5L-lMg">
-                                <rect key="frame" x="8" y="74" width="341" height="8.5"/>
+                                <rect key="frame" x="16" y="74" width="341" height="16.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="7yJ-r4-6fd">
-                                <rect key="frame" x="8" y="96.5" width="107.5" height="31.5"/>
+                                <rect key="frame" x="16" y="104.5" width="107.5" height="31.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6i-SG-yP4">
                                         <rect key="frame" x="0.0" y="0.5" width="58" height="31"/>
@@ -108,12 +108,12 @@
                             <constraint firstItem="8Xb-3W-asr" firstAttribute="top" secondItem="hbb-ac-xbh" secondAttribute="bottom" constant="10" id="7Vw-j5-rg5"/>
                             <constraint firstItem="hbb-ac-xbh" firstAttribute="top" secondItem="IzQ-im-F5d" secondAttribute="top" id="8YN-N2-tLi"/>
                             <constraint firstItem="hbb-ac-xbh" firstAttribute="leading" secondItem="IzQ-im-F5d" secondAttribute="leading" id="8vn-OO-Fyo"/>
-                            <constraint firstItem="3xp-G7-Qiz" firstAttribute="leading" secondItem="IzQ-im-F5d" secondAttribute="leading" constant="8" id="HjX-7A-ztk"/>
+                            <constraint firstItem="3xp-G7-Qiz" firstAttribute="leading" secondItem="IzQ-im-F5d" secondAttribute="leading" constant="16" id="HjX-7A-ztk"/>
                             <constraint firstAttribute="bottom" secondItem="7yJ-r4-6fd" secondAttribute="bottom" constant="20" id="I56-eL-Ay4"/>
                             <constraint firstItem="7yJ-r4-6fd" firstAttribute="top" secondItem="Njh-5L-lMg" secondAttribute="bottom" constant="14" id="Mbb-4a-9CO"/>
-                            <constraint firstItem="0yM-se-osc" firstAttribute="leading" secondItem="IzQ-im-F5d" secondAttribute="leading" constant="8" id="Sm4-0W-dbg"/>
-                            <constraint firstItem="7yJ-r4-6fd" firstAttribute="leading" secondItem="IzQ-im-F5d" secondAttribute="leading" constant="8" id="WXc-Kz-oVr"/>
-                            <constraint firstItem="Njh-5L-lMg" firstAttribute="leading" secondItem="IzQ-im-F5d" secondAttribute="leading" constant="8" id="a3m-am-MVZ"/>
+                            <constraint firstItem="0yM-se-osc" firstAttribute="leading" secondItem="IzQ-im-F5d" secondAttribute="leading" constant="16" id="Sm4-0W-dbg"/>
+                            <constraint firstItem="7yJ-r4-6fd" firstAttribute="leading" secondItem="IzQ-im-F5d" secondAttribute="leading" constant="16" id="WXc-Kz-oVr"/>
+                            <constraint firstItem="Njh-5L-lMg" firstAttribute="leading" secondItem="IzQ-im-F5d" secondAttribute="leading" constant="16" id="a3m-am-MVZ"/>
                             <constraint firstItem="0yM-se-osc" firstAttribute="top" secondItem="3xp-G7-Qiz" secondAttribute="bottom" constant="5" id="eA6-WT-YOO"/>
                             <constraint firstAttribute="trailing" secondItem="8Xb-3W-asr" secondAttribute="trailing" constant="8" id="js7-Jo-A7g"/>
                             <constraint firstItem="Njh-5L-lMg" firstAttribute="top" secondItem="0yM-se-osc" secondAttribute="bottom" constant="14" id="oNZ-Qc-iWn"/>
@@ -130,7 +130,7 @@
                 <constraint firstAttribute="trailing" secondItem="IzQ-im-F5d" secondAttribute="trailing" id="hqw-Tb-Kas"/>
                 <constraint firstAttribute="bottom" secondItem="IzQ-im-F5d" secondAttribute="bottom" id="jLH-Q9-Li6"/>
             </constraints>
-            <size key="customSize" width="509" height="148"/>
+            <size key="customSize" width="509" height="156"/>
             <connections>
                 <outlet property="containerView" destination="IzQ-im-F5d" id="P6C-0W-kI3"/>
                 <outlet property="createdAt" destination="Hsw-P7-Zyx" id="Viu-Uf-3Z2"/>
@@ -138,7 +138,7 @@
                 <outlet property="rmAddressBtn" destination="8Xb-3W-asr" id="3UR-7u-kng"/>
                 <outlet property="totalRecieved" destination="SGz-Gz-y0O" id="px3-4d-zlR"/>
             </connections>
-            <point key="canvasLocation" x="274.63768115942031" y="69.642857142857139"/>
+            <point key="canvasLocation" x="274.63768115942031" y="72.321428571428569"/>
         </collectionViewCell>
     </objects>
     <resources>

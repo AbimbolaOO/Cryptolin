@@ -57,8 +57,8 @@ class AddressesCollectionViewHeaderCell: UICollectionReusableView {
         NSLayoutConstraint.activate([
             btn.topAnchor.constraint(equalTo: topAnchor, constant: 30),
             btn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
-            btn.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            btn.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            btn.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            btn.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             btn.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
