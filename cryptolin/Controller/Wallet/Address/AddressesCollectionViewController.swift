@@ -7,8 +7,9 @@
 
 import UIKit
 import CoreMedia
+import Foundation
 
-class AddressesCollectionViewController: UICollectionViewController, DeleteCryptoAddressProtocol{
+class AddressesCollectionViewController: UICollectionViewController, DeleteCryptoAddressProtocol, AddressesCollectionViewHeaderCellDelegate{
     
     enum Section{
         case main
@@ -91,6 +92,11 @@ class AddressesCollectionViewController: UICollectionViewController, DeleteCrypt
             cell?.removeCryptoAdressBtnCallback = self.setIndextrackerCallback
             cell?.presentQRCodeViewCallback = self.presentQRCodeViewCallback
             cell?.delegate = self
+            
+            if indexPath.item == self.allCryptoAddressInfoList.count - 1{
+                cell?.rmAddressBtn.isHidden = true
+            }
+            
             return cell
         })
         
@@ -102,6 +108,7 @@ class AddressesCollectionViewController: UICollectionViewController, DeleteCrypt
                 ofKind: kind,
                 withReuseIdentifier: AddressesCollectionViewHeaderCell.reuseIdentifier,
                 for: indexPath) as? AddressesCollectionViewHeaderCell
+            view?.generateAddressDelegate = self
             return view
         }
         return dataSource
@@ -123,6 +130,16 @@ class AddressesCollectionViewController: UICollectionViewController, DeleteCrypt
         dataSource.apply(snapshot, animatingDifferences: true)
         allCryptoAddressInfoList.remove(at: indexTracker)
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func generateNewCryptoAdress() {
+        let cryptoAddress = UUID()
+        var snapshot = dataSource.snapshot()
+        let identifier = snapshot.itemIdentifiers(inSection: .main)
+        let newlyCreateCryptoAddressData = CryptoAddressData(totalRecieved: "0", createAt: "0", cryptoAddress: cryptoAddress.uuidString)
+        snapshot.insertItems([newlyCreateCryptoAddressData], beforeItem: identifier[0])
+        allCryptoAddressInfoList.insert(newlyCreateCryptoAddressData, at: 0)
+        dataSource.apply(snapshot, animatingDifferences: true)
     }
     
 }

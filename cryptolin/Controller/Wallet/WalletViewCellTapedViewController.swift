@@ -34,7 +34,6 @@ class WalletViewCellTapedViewController: UIViewController {
         
         let backBarButtton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.topItem?.backBarButtonItem = backBarButtton
-        navigationItem.title = "BTC Addresses"
         
         addViewControllerAsChildVC(childVC: EmptyTranscationsView)
         addViewControllerAsChildVC(childVC: AddressView)

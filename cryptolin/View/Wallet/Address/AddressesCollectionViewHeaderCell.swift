@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol AddressesCollectionViewHeaderCellDelegate: AnyObject{
+    func generateNewCryptoAdress()
+}
+
 class AddressesCollectionViewHeaderCell: UICollectionReusableView {
     
     static let reuseIdentifier = String(describing: AddressesCollectionViewHeaderCell.self)
+    
+    weak var generateAddressDelegate: AddressesCollectionViewHeaderCellDelegate?
     
     let btn: UIButton = {
         var filled = UIButton.Configuration.filled()
@@ -34,6 +40,7 @@ class AddressesCollectionViewHeaderCell: UICollectionReusableView {
     
     @objc func createNewAddress(){
         print("We would succeed!")
+        self.generateAddressDelegate?.generateNewCryptoAdress()
     }
     
     override init(frame: CGRect){

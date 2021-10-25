@@ -15,6 +15,7 @@ class AddressesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var totalRecieved: UILabel!
     @IBOutlet weak var createdAt: UILabel!
     @IBOutlet weak var cryptoAddress: UILabel!
+    @IBOutlet weak var rmAddressBtn: UIButton!
     
     
     var delegate: AddressesCollectionViewController!

@@ -71,11 +71,12 @@ class WalletViewController: UICollectionViewController{
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return WalletAddressData.listOfWalletAddressInfo.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WalletCollectionViewCell.reuseIdentifier, for: indexPath) as? WalletCollectionViewCell else {fatalError("Couldn't create cell")}
+        cell.setUpWalletAddressCellInfo = WalletAddressData.listOfWalletAddressInfo[indexPath.item]
         return cell
     }
     
@@ -89,8 +90,15 @@ class WalletViewController: UICollectionViewController{
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.item)
         if let vc = storyBoard.instantiateViewController(withIdentifier: WalletViewCellTapedViewController.storyboardId) as? WalletViewCellTapedViewController{
+            vc.navigationItem.title = creatNavTitleForWalletView(indexPathItem: indexPath.item)
             navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    func creatNavTitleForWalletView(indexPathItem: Int) -> String{
+        let getBalanceComponents = WalletAddressData.listOfWalletAddressInfo[indexPathItem].balance.components(separatedBy: " ")
+        let abbr = getBalanceComponents[1]
+        return "\(abbr) Addresses"
     }
     
 }

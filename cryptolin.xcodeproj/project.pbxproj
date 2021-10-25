@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F01FEB82726CBB600A24E58 /* WalletAddressData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F01FEB72726CBB600A24E58 /* WalletAddressData.swift */; };
 		5F02489B2719C6FC00A85C9A /* cryptolin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F0248992719C6FC00A85C9A /* cryptolin.xcdatamodeld */; };
 		5F0E52852713518300D982D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F0E52842713518300D982D5 /* GoogleService-Info.plist */; };
 		5F36843D2711EF0B00E15D70 /* TextFieldValidators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F36843C2711EF0B00E15D70 /* TextFieldValidators.swift */; };
@@ -76,6 +77,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F01FEB72726CBB600A24E58 /* WalletAddressData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletAddressData.swift; sourceTree = "<group>"; };
 		5F02489A2719C6FC00A85C9A /* cryptolin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = cryptolin.xcdatamodel; sourceTree = "<group>"; };
 		5F0E52842713518300D982D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5F36843C2711EF0B00E15D70 /* TextFieldValidators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidators.swift; sourceTree = "<group>"; };
@@ -157,6 +159,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F01FEB92726CE4100A24E58 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5FA4E8CA2703441100F17F3D /* Main.storyboard */,
+				5FA4E8CF2703441400F17F3D /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		5F01FEBA2726CE7900A24E58 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5FA4E8CD2703441400F17F3D /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		5F81A846271E0CB500CBCB93 /* Address */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,18 +248,16 @@
 		5FA4E8C32703441100F17F3D /* cryptolin */ = {
 			isa = PBXGroup;
 			children = (
+				5F01FEBA2726CE7900A24E58 /* Assets */,
 				5F8FDEBD270CC89F0071087B /* Helpers */,
 				5FA4E8DA27034F0B00F17F3D /* Model */,
 				5FA4E8D927034EEE00F17F3D /* View */,
 				5FA4E8D827034EE500F17F3D /* Controller */,
+				5F01FEB92726CE4100A24E58 /* Storyboards */,
 				5FA4E8C42703441100F17F3D /* AppDelegate.swift */,
 				5FA4E8C62703441100F17F3D /* SceneDelegate.swift */,
-				5FA4E8CA2703441100F17F3D /* Main.storyboard */,
-				5FA4E8CD2703441400F17F3D /* Assets.xcassets */,
-				5FA4E8CF2703441400F17F3D /* LaunchScreen.storyboard */,
 				5FA4E8D22703441400F17F3D /* Info.plist */,
 				5F0E52842713518300D982D5 /* GoogleService-Info.plist */,
-				5F0248992719C6FC00A85C9A /* cryptolin.xcdatamodeld */,
 			);
 			path = cryptolin;
 			sourceTree = "<group>";
@@ -279,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				5FA4E8E82703716700F17F3D /* Data */,
+				5F0248992719C6FC00A85C9A /* cryptolin.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -339,6 +357,7 @@
 				5FA4E8E92703718700F17F3D /* SettingTableViewCellData.swift */,
 				5FB428152710DFE60039F10B /* OnBoardingCollectionViewCellData.swift */,
 				5F81A8562721F34000CBCB93 /* CryptoAddressData.swift */,
+				5F01FEB72726CBB600A24E58 /* WalletAddressData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -481,6 +500,7 @@
 				5F6D81BF2718AE7D00A74652 /* BiometricViewController.swift in Sources */,
 				5FE4A7902725D5EA0044E0D0 /* SelectSavingsOptionsViewController.swift in Sources */,
 				5FA4E8EA2703718700F17F3D /* SettingTableViewCellData.swift in Sources */,
+				5F01FEB82726CBB600A24E58 /* WalletAddressData.swift in Sources */,
 				5F81A8552720CBE300CBCB93 /* AddressesCollectionViewHeaderCell.swift in Sources */,
 				5F81A843271B72E100CBCB93 /* CustomSegmentedControl.swift in Sources */,
 				5FB428102710BDDB0039F10B /* OTPViewController.swift in Sources */,
