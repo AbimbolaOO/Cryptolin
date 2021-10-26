@@ -41,4 +41,11 @@ class DeleteAddressViewController: UIViewController {
     @IBAction func okBtn(_ sender: Any) {
         self.delegate.removeCryptoAddress()
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first
+        if touch?.view == alertView.superview{
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
 }
