@@ -123,6 +123,12 @@
                 <constraint firstItem="2zN-af-q0l" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="TMu-C8-KZv"/>
             </constraints>
             <size key="customSize" width="378" height="203"/>
+            <connections>
+                <outlet property="cryptoBalance" destination="FPh-wy-Zro" id="Zjk-Xs-bAQ"/>
+                <outlet property="cryptoImage" destination="u55-LY-Nvb" id="RBK-Dp-owf"/>
+                <outlet property="cryptoName" destination="LNX-cZ-dAZ" id="OOP-kO-cuT"/>
+                <outlet property="totalCryptoRecieved" destination="8vm-h8-aPm" id="CcJ-g7-8vh"/>
+            </connections>
             <point key="canvasLocation" x="179.71014492753625" y="151.67410714285714"/>
         </collectionViewCell>
     </objects>

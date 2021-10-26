@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="AddWalletCellCollectionViewCell" customModule="cryptolin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="346" height="87"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="346" height="87"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H94-dQ-iZy">
+                        <rect key="frame" x="0.0" y="0.0" width="346" height="87"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="A63-jo-VUI">
+                                <rect key="frame" x="20" y="0.0" width="306" height="87"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMs-N4-B04">
+                                        <rect key="frame" x="0.0" y="22.5" width="42" height="42"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="42" id="1VV-KI-pJN"/>
+                                            <constraint firstAttribute="height" constant="42" id="Pqg-cJ-Mua"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="neO-kM-76S">
+                                        <rect key="frame" x="62" y="25.5" width="244" height="36"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add new wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yud-Jq-5oD">
+                                                <rect key="frame" x="0.0" y="0.0" width="127" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More coin option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvb-oN-ORp">
+                                                <rect key="frame" x="0.0" y="21.5" width="99" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                        <constraints>
+                            <constraint firstItem="A63-jo-VUI" firstAttribute="leading" secondItem="H94-dQ-iZy" secondAttribute="leading" constant="20" id="Co9-oC-Fy3"/>
+                            <constraint firstAttribute="bottom" secondItem="A63-jo-VUI" secondAttribute="bottom" id="EOY-Il-I2z"/>
+                            <constraint firstAttribute="trailing" secondItem="A63-jo-VUI" secondAttribute="trailing" constant="20" id="FLb-Jf-usn"/>
+                            <constraint firstItem="A63-jo-VUI" firstAttribute="top" secondItem="H94-dQ-iZy" secondAttribute="top" id="jbM-76-SFz"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="H94-dQ-iZy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="MEB-8P-e5b"/>
+                <constraint firstItem="H94-dQ-iZy" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="O4X-Ac-rQR"/>
+                <constraint firstAttribute="trailing" secondItem="H94-dQ-iZy" secondAttribute="trailing" id="UTM-Us-5au"/>
+                <constraint firstAttribute="bottom" secondItem="H94-dQ-iZy" secondAttribute="bottom" id="lVn-NA-ewQ"/>
+            </constraints>
+            <size key="customSize" width="346" height="87"/>
+            <connections>
+                <outlet property="containerView" destination="H94-dQ-iZy" id="ovG-0K-Bk3"/>
+                <outlet property="plusButton" destination="cMs-N4-B04" id="DYU-LQ-JZU"/>
+            </connections>
+            <point key="canvasLocation" x="240.57971014492756" y="122.20982142857142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

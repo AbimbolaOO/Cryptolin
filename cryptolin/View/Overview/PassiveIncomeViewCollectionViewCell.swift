@@ -1,16 +1,15 @@
 //
-//  Section3CollectionViewCell.swift
+//  PassiveIncomeViewCollectionViewCell.swift
 //  cryptolin
 //
-//  Created by Olayemi Abimbola on 01/10/2021.
+//  Created by Olayemi Abimbola on 26/10/2021.
 //
 
 import UIKit
 
-class Section3CollectionViewCell: UICollectionViewCell {
+class PassiveIncomeViewCollectionViewCell: UICollectionViewCell {
     
-    static let reuseIdentifier = String(describing: Section3CollectionViewCell.self)
-
+    static let reuseIdentifier = String(describing: PassiveIncomeViewCollectionViewCell.self)
     @IBOutlet weak var containerView: UIView!
     
     override func awakeFromNib() {

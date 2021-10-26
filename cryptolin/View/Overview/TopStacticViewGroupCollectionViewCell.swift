@@ -7,11 +7,13 @@
 
 import UIKit
 
-class Section2CollectionViewCell: UICollectionViewCell {
+class TopStacticViewGroupCollectionViewCell: UICollectionViewCell {
     
-    static let reuseIdentifier = String(describing: Section2CollectionViewCell.self)
+    static let reuseIdentifier = String(describing: TopStacticViewGroupCollectionViewCell.self)
 
     @IBOutlet weak var containerForImageView: UIView!
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var label: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

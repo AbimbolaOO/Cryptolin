@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol AddressesCollectionViewHeaderCellDelegate: AnyObject{
+    func generateNewCryptoAdress()
+}
+
 class AddressesCollectionViewHeaderCell: UICollectionReusableView {
     
     static let reuseIdentifier = String(describing: AddressesCollectionViewHeaderCell.self)
+    
+    weak var generateAddressDelegate: AddressesCollectionViewHeaderCellDelegate?
     
     let btn: UIButton = {
         var filled = UIButton.Configuration.filled()
@@ -34,6 +40,7 @@ class AddressesCollectionViewHeaderCell: UICollectionReusableView {
     
     @objc func createNewAddress(){
         print("We would succeed!")
+        self.generateAddressDelegate?.generateNewCryptoAdress()
     }
     
     override init(frame: CGRect){
@@ -50,8 +57,8 @@ class AddressesCollectionViewHeaderCell: UICollectionReusableView {
         NSLayoutConstraint.activate([
             btn.topAnchor.constraint(equalTo: topAnchor, constant: 30),
             btn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
-            btn.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            btn.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            btn.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            btn.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             btn.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
