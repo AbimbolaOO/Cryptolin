@@ -128,6 +128,7 @@ class SelectSavingsOptionsViewController: UIViewController {
     @objc func tapLabel(gesture: UITapGestureRecognizer) {
         if gesture.didTapAttributedTextInLabel(label: faqTextLabel, inRange: linkRange) {
             print("Tapped targetRange1")
+            navigationController?.pushViewController(SavingsFAQCollectionViewController(), animated: true)
         }else {
             print("Tapped none")
         }

@@ -14,7 +14,6 @@ class CryptoAddressData: Hashable{
     }
     
     func hash(into hasher: inout Hasher) {
-      // 2
       hasher.combine(cryptoAddress)
     }
     
