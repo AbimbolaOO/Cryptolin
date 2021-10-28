@@ -10,6 +10,8 @@
 		5F01FEB82726CBB600A24E58 /* WalletAddressData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F01FEB72726CBB600A24E58 /* WalletAddressData.swift */; };
 		5F02489B2719C6FC00A85C9A /* cryptolin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F0248992719C6FC00A85C9A /* cryptolin.xcdatamodeld */; };
 		5F0E52852713518300D982D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F0E52842713518300D982D5 /* GoogleService-Info.plist */; };
+		5F19151C272952EC0010CAA8 /* SavingsFAQCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F19151B272952EC0010CAA8 /* SavingsFAQCollectionViewController.swift */; };
+		5F19152327296D1D0010CAA8 /* SavingsFAQsQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F19152227296D1D0010CAA8 /* SavingsFAQsQuestion.swift */; };
 		5F36843D2711EF0B00E15D70 /* TextFieldValidators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F36843C2711EF0B00E15D70 /* TextFieldValidators.swift */; };
 		5F6989792723081B0051F75E /* DeleteAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6989782723081B0051F75E /* DeleteAddressViewController.swift */; };
 		5F6D81B5271703F000A74652 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5F6D81B4271703F000A74652 /* FirebaseAuth */; };
@@ -66,6 +68,7 @@
 		5FB428122710C5CC0039F10B /* SetUpPINViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB428112710C5CC0039F10B /* SetUpPINViewController.swift */; };
 		5FB428142710C6630039F10B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB428132710C6630039F10B /* LoginViewController.swift */; };
 		5FB428162710DFE60039F10B /* OnBoardingCollectionViewCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB428152710DFE60039F10B /* OnBoardingCollectionViewCellData.swift */; };
+		5FB7BE23272AC16000C49937 /* SavingsAddFundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB7BE22272AC16000C49937 /* SavingsAddFundsViewController.swift */; };
 		5FCAC81B2728120500D41D79 /* OverviewTabViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCAC81A2728120400D41D79 /* OverviewTabViewData.swift */; };
 		5FCAC81E2728549400D41D79 /* YourBalanceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCAC81C2728549400D41D79 /* YourBalanceCollectionViewCell.swift */; };
 		5FCAC81F2728549400D41D79 /* YourBalanceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FCAC81D2728549400D41D79 /* YourBalanceCollectionViewCell.xib */; };
@@ -89,6 +92,8 @@
 		5F01FEB72726CBB600A24E58 /* WalletAddressData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletAddressData.swift; sourceTree = "<group>"; };
 		5F02489A2719C6FC00A85C9A /* cryptolin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = cryptolin.xcdatamodel; sourceTree = "<group>"; };
 		5F0E52842713518300D982D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5F19151B272952EC0010CAA8 /* SavingsFAQCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsFAQCollectionViewController.swift; sourceTree = "<group>"; };
+		5F19152227296D1D0010CAA8 /* SavingsFAQsQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsFAQsQuestion.swift; sourceTree = "<group>"; };
 		5F36843C2711EF0B00E15D70 /* TextFieldValidators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidators.swift; sourceTree = "<group>"; };
 		5F6989782723081B0051F75E /* DeleteAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAddressViewController.swift; sourceTree = "<group>"; };
 		5F6D81BE2718AE7C00A74652 /* BiometricViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +145,7 @@
 		5FB428112710C5CC0039F10B /* SetUpPINViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpPINViewController.swift; sourceTree = "<group>"; };
 		5FB428132710C6630039F10B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5FB428152710DFE60039F10B /* OnBoardingCollectionViewCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCollectionViewCellData.swift; sourceTree = "<group>"; };
+		5FB7BE22272AC16000C49937 /* SavingsAddFundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsAddFundsViewController.swift; sourceTree = "<group>"; };
 		5FCAC81A2728120400D41D79 /* OverviewTabViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewTabViewData.swift; sourceTree = "<group>"; };
 		5FCAC81C2728549400D41D79 /* YourBalanceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourBalanceCollectionViewCell.swift; sourceTree = "<group>"; };
 		5FCAC81D2728549400D41D79 /* YourBalanceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YourBalanceCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -226,7 +232,6 @@
 		5F8FDEC0270D50040071087B /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				5FA4E8DD27034F3400F17F3D /* Savings */,
 				5F8FDEC1270DCBB20071087B /* SignUpViewController.swift */,
 				5FB428112710C5CC0039F10B /* SetUpPINViewController.swift */,
 				5FB428132710C6630039F10B /* LoginViewController.swift */,
@@ -287,6 +292,7 @@
 				5F8FDEC0270D50040071087B /* Login */,
 				5FA4E8DF27034F5200F17F3D /* Settings */,
 				5FA4E8DE27034F4400F17F3D /* Transactions */,
+				5FA4E8DD27034F3400F17F3D /* Savings */,
 				5FA4E8DC27034F2800F17F3D /* Wallet */,
 				5FA4E8DB27034F1F00F17F3D /* Overview */,
 				5FA4E8E02703500A00F17F3D /* BaseTabBarController.swift */,
@@ -299,8 +305,8 @@
 			isa = PBXGroup;
 			children = (
 				5FB427FC270F817E0039F10B /* Login */,
-				5F9476BE270634DA00654F63 /* Wallet */,
 				5FA4E8ED2703A43C00F17F3D /* Settings */,
+				5F9476BE270634DA00654F63 /* Wallet */,
 				5FF0E342270690FF004061E0 /* Overview */,
 				5F9476CB27066E5F00654F63 /* BackgroundSupplementaryView.swift */,
 				5FA4E8EB270396EB00F17F3D /* NavbarTilteView.swift */,
@@ -342,6 +348,8 @@
 			children = (
 				5F9476B82704D7F400654F63 /* SavingsViewController.swift */,
 				5FE4A78F2725D5EA0044E0D0 /* SelectSavingsOptionsViewController.swift */,
+				5F19151B272952EC0010CAA8 /* SavingsFAQCollectionViewController.swift */,
+				5FB7BE22272AC16000C49937 /* SavingsAddFundsViewController.swift */,
 			);
 			path = Savings;
 			sourceTree = "<group>";
@@ -377,6 +385,7 @@
 				5F81A8562721F34000CBCB93 /* CryptoAddressData.swift */,
 				5F01FEB72726CBB600A24E58 /* WalletAddressData.swift */,
 				5FCAC81A2728120400D41D79 /* OverviewTabViewData.swift */,
+				5F19152227296D1D0010CAA8 /* SavingsFAQsQuestion.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -536,6 +545,7 @@
 				5F81A843271B72E100CBCB93 /* CustomSegmentedControl.swift in Sources */,
 				5FB428102710BDDB0039F10B /* OTPViewController.swift in Sources */,
 				5FB42809270F82B80039F10B /* OnBoardingSection1CollectionViewCell.swift in Sources */,
+				5F19152327296D1D0010CAA8 /* SavingsFAQsQuestion.swift in Sources */,
 				5FB4280D270F82FA0039F10B /* OnBoardingSection2CollectionViewCell.swift in Sources */,
 				5FA4E8EF2703A69C00F17F3D /* NINViewController.swift in Sources */,
 				5F9476AB27046EB900654F63 /* TransactionsViewController.swift in Sources */,
@@ -543,6 +553,7 @@
 				5FB427FB270F64570039F10B /* OnBoardingViewController.swift in Sources */,
 				5FF0E35327069FB7004061E0 /* CryptoCellsCollectionViewCell.swift in Sources */,
 				5FA4E8E6270359E500F17F3D /* SettingsTableViewCell.swift in Sources */,
+				5F19151C272952EC0010CAA8 /* SavingsFAQCollectionViewController.swift in Sources */,
 				5F9476BD2704D84300654F63 /* OverviewViewController.swift in Sources */,
 				5FCAC81E2728549400D41D79 /* YourBalanceCollectionViewCell.swift in Sources */,
 				5F9476AD2704743F00654F63 /* ProfileViewController.swift in Sources */,
@@ -551,6 +562,7 @@
 				5FCAC82227285A5500D41D79 /* CryptoPortfolioSummaryCollectionViewCell.swift in Sources */,
 				5F8FDEC2270DCBB20071087B /* SignUpViewController.swift in Sources */,
 				5FA4E8E3270354D200F17F3D /* SettingsViewController.swift in Sources */,
+				5FB7BE23272AC16000C49937 /* SavingsAddFundsViewController.swift in Sources */,
 				5FCAC8262728665400D41D79 /* AddWalletCellCollectionViewCell.swift in Sources */,
 				5F9476B92704D7F400654F63 /* SavingsViewController.swift in Sources */,
 				5F9476B32704B7AC00654F63 /* SecurityViewController.swift in Sources */,

@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //                window.rootViewController = BaseTabBarController() // Place your root view controller here
                 window.rootViewController = Utils.createViewInNavbar(viewController: OnBoardingViewController())
             }
-//            window.rootViewController = AddressesCollectionViewController()
+//            window.rootViewController = SavingsFAQCollectionViewController()
             self.window = window
             window.makeKeyAndVisible()
         }

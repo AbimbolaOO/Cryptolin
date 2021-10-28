@@ -58,6 +58,15 @@ class SelectSavingsOptionsViewController: UIViewController {
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(self.tapLabel(gesture:)))
         faqTextLabel.addGestureRecognizer(tapGR)
         
+        proceedBtn.addTarget(self, action: #selector(presentAddFundsView(button:)), for: .touchUpInside)
+        
+    }
+    
+    @objc func presentAddFundsView(button: UIButton){
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: SavingsAddFundsViewController.storyboardId) as? SavingsAddFundsViewController else{
+            fatalError("Couldn't create SavingsAddFundsViewController view")
+        }
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func setUpUI(){
@@ -128,6 +137,7 @@ class SelectSavingsOptionsViewController: UIViewController {
     @objc func tapLabel(gesture: UITapGestureRecognizer) {
         if gesture.didTapAttributedTextInLabel(label: faqTextLabel, inRange: linkRange) {
             print("Tapped targetRange1")
+            navigationController?.pushViewController(SavingsFAQCollectionViewController(), animated: true)
         }else {
             print("Tapped none")
         }
