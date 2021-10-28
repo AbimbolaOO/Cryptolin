@@ -68,6 +68,7 @@
 		5FB428122710C5CC0039F10B /* SetUpPINViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB428112710C5CC0039F10B /* SetUpPINViewController.swift */; };
 		5FB428142710C6630039F10B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB428132710C6630039F10B /* LoginViewController.swift */; };
 		5FB428162710DFE60039F10B /* OnBoardingCollectionViewCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB428152710DFE60039F10B /* OnBoardingCollectionViewCellData.swift */; };
+		5FB7BE23272AC16000C49937 /* SavingsAddFundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB7BE22272AC16000C49937 /* SavingsAddFundsViewController.swift */; };
 		5FCAC81B2728120500D41D79 /* OverviewTabViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCAC81A2728120400D41D79 /* OverviewTabViewData.swift */; };
 		5FCAC81E2728549400D41D79 /* YourBalanceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCAC81C2728549400D41D79 /* YourBalanceCollectionViewCell.swift */; };
 		5FCAC81F2728549400D41D79 /* YourBalanceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FCAC81D2728549400D41D79 /* YourBalanceCollectionViewCell.xib */; };
@@ -144,6 +145,7 @@
 		5FB428112710C5CC0039F10B /* SetUpPINViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpPINViewController.swift; sourceTree = "<group>"; };
 		5FB428132710C6630039F10B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5FB428152710DFE60039F10B /* OnBoardingCollectionViewCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCollectionViewCellData.swift; sourceTree = "<group>"; };
+		5FB7BE22272AC16000C49937 /* SavingsAddFundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsAddFundsViewController.swift; sourceTree = "<group>"; };
 		5FCAC81A2728120400D41D79 /* OverviewTabViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewTabViewData.swift; sourceTree = "<group>"; };
 		5FCAC81C2728549400D41D79 /* YourBalanceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourBalanceCollectionViewCell.swift; sourceTree = "<group>"; };
 		5FCAC81D2728549400D41D79 /* YourBalanceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YourBalanceCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 				5F9476B82704D7F400654F63 /* SavingsViewController.swift */,
 				5FE4A78F2725D5EA0044E0D0 /* SelectSavingsOptionsViewController.swift */,
 				5F19151B272952EC0010CAA8 /* SavingsFAQCollectionViewController.swift */,
+				5FB7BE22272AC16000C49937 /* SavingsAddFundsViewController.swift */,
 			);
 			path = Savings;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				5FCAC82227285A5500D41D79 /* CryptoPortfolioSummaryCollectionViewCell.swift in Sources */,
 				5F8FDEC2270DCBB20071087B /* SignUpViewController.swift in Sources */,
 				5FA4E8E3270354D200F17F3D /* SettingsViewController.swift in Sources */,
+				5FB7BE23272AC16000C49937 /* SavingsAddFundsViewController.swift in Sources */,
 				5FCAC8262728665400D41D79 /* AddWalletCellCollectionViewCell.swift in Sources */,
 				5F9476B92704D7F400654F63 /* SavingsViewController.swift in Sources */,
 				5F9476B32704B7AC00654F63 /* SecurityViewController.swift in Sources */,

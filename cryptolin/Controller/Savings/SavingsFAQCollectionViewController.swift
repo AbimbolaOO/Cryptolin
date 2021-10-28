@@ -13,7 +13,7 @@ class SavingsFAQCollectionViewController: UICollectionViewController {
     typealias DataSource = UICollectionViewDiffableDataSource<SavingsFAQsQuestion.Section, AnyHashable>
     
     init(){
-        let configuration = UICollectionLayoutListConfiguration(appearance: .grouped)
+        let configuration = UICollectionLayoutListConfiguration(appearance: .plain)
         super.init(collectionViewLayout: UICollectionViewCompositionalLayout.list(using: configuration))
     }
 
@@ -26,6 +26,8 @@ class SavingsFAQCollectionViewController: UICollectionViewController {
         navigationItem.title = "Savings FAQs"
         let backBarButtton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.topItem?.backBarButtonItem = backBarButtton
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.bounces = false
         
         collectionView.backgroundColor = .red
         applySnapshot()
@@ -34,10 +36,11 @@ class SavingsFAQCollectionViewController: UICollectionViewController {
     func makeDataSource() -> DataSource {
         let questionCellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, SavingsFAQsQuestion> { cell, _, item in
             var configuration = cell.defaultContentConfiguration()
+            configuration.textProperties.color = UIColor.systemBlue
             configuration.text = item.question
             
             cell.contentConfiguration = configuration
-            let options = UICellAccessory.OutlineDisclosureOptions(style: .header)
+            let options = UICellAccessory.OutlineDisclosureOptions(style: .header, tintColor: UIColor.lightGray)
             let disclosureAccessory = UICellAccessory.outlineDisclosure(options: options)
             cell.accessories = [disclosureAccessory]
         }
