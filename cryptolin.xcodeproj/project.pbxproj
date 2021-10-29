@@ -12,6 +12,8 @@
 		5F0E52852713518300D982D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F0E52842713518300D982D5 /* GoogleService-Info.plist */; };
 		5F19151C272952EC0010CAA8 /* SavingsFAQCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F19151B272952EC0010CAA8 /* SavingsFAQCollectionViewController.swift */; };
 		5F19152327296D1D0010CAA8 /* SavingsFAQsQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F19152227296D1D0010CAA8 /* SavingsFAQsQuestion.swift */; };
+		5F2CD911272AF3CA006FF401 /* DepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2CD910272AF3CA006FF401 /* DepositViewController.swift */; };
+		5F2CD913272C098A006FF401 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2CD912272C098A006FF401 /* CustomTextField.swift */; };
 		5F36843D2711EF0B00E15D70 /* TextFieldValidators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F36843C2711EF0B00E15D70 /* TextFieldValidators.swift */; };
 		5F6989792723081B0051F75E /* DeleteAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6989782723081B0051F75E /* DeleteAddressViewController.swift */; };
 		5F6D81B5271703F000A74652 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5F6D81B4271703F000A74652 /* FirebaseAuth */; };
@@ -94,6 +96,8 @@
 		5F0E52842713518300D982D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5F19151B272952EC0010CAA8 /* SavingsFAQCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsFAQCollectionViewController.swift; sourceTree = "<group>"; };
 		5F19152227296D1D0010CAA8 /* SavingsFAQsQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsFAQsQuestion.swift; sourceTree = "<group>"; };
+		5F2CD910272AF3CA006FF401 /* DepositViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositViewController.swift; sourceTree = "<group>"; };
+		5F2CD912272C098A006FF401 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		5F36843C2711EF0B00E15D70 /* TextFieldValidators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidators.swift; sourceTree = "<group>"; };
 		5F6989782723081B0051F75E /* DeleteAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAddressViewController.swift; sourceTree = "<group>"; };
 		5F6D81BE2718AE7C00A74652 /* BiometricViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricViewController.swift; sourceTree = "<group>"; };
@@ -312,6 +316,7 @@
 				5FA4E8EB270396EB00F17F3D /* NavbarTilteView.swift */,
 				5F81A842271B72E100CBCB93 /* CustomSegmentedControl.swift */,
 				5F81A844271CA79C00CBCB93 /* EmptyViewController.swift */,
+				5F2CD912272C098A006FF401 /* CustomTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -329,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				5F9476BC2704D84300654F63 /* OverviewViewController.swift */,
+				5F2CD910272AF3CA006FF401 /* DepositViewController.swift */,
 			);
 			path = Overview;
 			sourceTree = "<group>";
@@ -557,6 +563,8 @@
 				5F9476BD2704D84300654F63 /* OverviewViewController.swift in Sources */,
 				5FCAC81E2728549400D41D79 /* YourBalanceCollectionViewCell.swift in Sources */,
 				5F9476AD2704743F00654F63 /* ProfileViewController.swift in Sources */,
+				5F2CD913272C098A006FF401 /* CustomTextField.swift in Sources */,
+				5F2CD911272AF3CA006FF401 /* DepositViewController.swift in Sources */,
 				5FA4E8C52703441100F17F3D /* AppDelegate.swift in Sources */,
 				5F9476B12704AA5D00654F63 /* PreferencesViewController.swift in Sources */,
 				5FCAC82227285A5500D41D79 /* CryptoPortfolioSummaryCollectionViewCell.swift in Sources */,
